@@ -853,6 +853,27 @@ body::before{
   padding:10px 0 4px;
 }
 
+
+.f-inr-mob{
+  display:none;
+  font-family:var(--fC);font-size:10px;
+  color:var(--faint);text-align:right;
+  white-space:nowrap;font-weight:700;
+  text-decoration:line-through;
+  margin-bottom:1px;
+}
+.f-save{
+  display:none;
+  font-family:var(--fC);font-size:9px;
+  color:#2A7A2A;text-align:right;
+  white-space:nowrap;font-weight:700;
+  letter-spacing:0.06em;
+}
+@media(max-width:600px){
+  .f-inr-mob{display:block;}
+  .f-save{display:block;}
+}
+
 </style>
 </head>
 <body>
@@ -1055,6 +1076,9 @@ body::before{
   </div>
   <span class="f-msrp">$585</span>
   <span class="f-inr">₹55,499</span>
+  
+  <span class="f-inr-mob">₹55,499</span>
+  <span class="f-save">Save ₹9,999</span>
   <span class="f-pr">₹45,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1066,6 +1090,9 @@ body::before{
   </div>
   <span class="f-msrp">$420</span>
   <span class="f-inr">₹39,845</span>
+  
+  <span class="f-inr-mob">₹39,845</span>
+  <span class="f-save">Save ₹10,345</span>
   <span class="f-pr">₹29,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1077,6 +1104,9 @@ body::before{
   </div>
   <span class="f-msrp">$420</span>
   <span class="f-inr">₹39,845</span>
+  
+  <span class="f-inr-mob">₹39,845</span>
+  <span class="f-save">Save ₹6,345</span>
   <span class="f-pr">₹33,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1088,6 +1118,9 @@ body::before{
   </div>
   <span class="f-msrp">$420</span>
   <span class="f-inr">₹39,845</span>
+  
+  <span class="f-inr-mob">₹39,845</span>
+  <span class="f-save">Save ₹5,345</span>
   <span class="f-pr">₹34,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1099,6 +1132,9 @@ body::before{
   </div>
   <span class="f-msrp">$420</span>
   <span class="f-inr">₹39,845</span>
+  
+  <span class="f-inr-mob">₹39,845</span>
+  <span class="f-save">Save ₹5,345</span>
   <span class="f-pr">₹34,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1110,6 +1146,9 @@ body::before{
   </div>
   <span class="f-msrp">$495</span>
   <span class="f-inr">₹46,961</span>
+  
+  <span class="f-inr-mob">₹46,961</span>
+  <span class="f-save">Save ₹6,961</span>
   <span class="f-pr">₹40,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1121,6 +1160,9 @@ body::before{
   </div>
   <span class="f-msrp">$585</span>
   <span class="f-inr">₹55,499</span>
+  
+  <span class="f-inr-mob">₹55,499</span>
+  <span class="f-save">Save ₹9,999</span>
   <span class="f-pr">₹45,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1132,6 +1174,9 @@ body::before{
   </div>
   <span class="f-msrp">$495</span>
   <span class="f-inr">₹46,961</span>
+  
+  <span class="f-inr-mob">₹46,961</span>
+  <span class="f-save">Save ₹6,961</span>
   <span class="f-pr">₹40,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1143,6 +1188,9 @@ body::before{
   </div>
   <span class="f-msrp">$420</span>
   <span class="f-inr">₹39,845</span>
+  
+  <span class="f-inr-mob">₹39,845</span>
+  <span class="f-save">Save ₹7,045</span>
   <span class="f-pr">₹32,800</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1157,6 +1205,9 @@ body::before{
   </div>
   <span class="f-msrp">€280</span>
   <span class="f-inr">₹31,164</span>
+  
+  <span class="f-inr-mob">₹31,164</span>
+  <span class="f-save">Save ₹5,964</span>
   <span class="f-pr">₹25,200</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1168,6 +1219,9 @@ body::before{
   </div>
   <span class="f-msrp">€280</span>
   <span class="f-inr">₹31,164</span>
+  
+  <span class="f-inr-mob">₹31,164</span>
+  <span class="f-save">Save ₹5,964</span>
   <span class="f-pr">₹25,200</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1182,6 +1236,9 @@ body::before{
   </div>
   <span class="f-msrp">€165</span>
   <span class="f-inr">₹18,364</span>
+  
+  <span class="f-inr-mob">₹18,364</span>
+  <span class="f-save">Save ₹3,864</span>
   <span class="f-pr">₹14,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1193,6 +1250,9 @@ body::before{
   </div>
   <span class="f-msrp">€165</span>
   <span class="f-inr">₹18,364</span>
+  
+  <span class="f-inr-mob">₹18,364</span>
+  <span class="f-save">Save ₹3,864</span>
   <span class="f-pr">₹14,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1204,6 +1264,9 @@ body::before{
   </div>
   <span class="f-msrp">€165</span>
   <span class="f-inr">₹18,364</span>
+  
+  <span class="f-inr-mob">₹18,364</span>
+  <span class="f-save">Save ₹3,864</span>
   <span class="f-pr">₹14,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1218,6 +1281,9 @@ body::before{
   </div>
   <span class="f-msrp">$690</span>
   <span class="f-inr">₹65,460</span>
+  
+  <span class="f-inr-mob">₹65,460</span>
+  <span class="f-save">Save ₹25,060</span>
   <span class="f-pr">₹40,400</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1232,6 +1298,9 @@ body::before{
   </div>
   <span class="f-msrp">€295</span>
   <span class="f-inr">₹32,834</span>
+  
+  <span class="f-inr-mob">₹32,834</span>
+  <span class="f-save">Save ₹2,834</span>
   <span class="f-pr">₹30,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1243,6 +1312,9 @@ body::before{
   </div>
   <span class="f-msrp">€295</span>
   <span class="f-inr">₹32,834</span>
+  
+  <span class="f-inr-mob">₹32,834</span>
+  <span class="f-save">Save ₹2,834</span>
   <span class="f-pr">₹30,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1254,6 +1326,9 @@ body::before{
   </div>
   <span class="f-msrp">€340</span>
   <span class="f-inr">₹37,842</span>
+  
+  <span class="f-inr-mob">₹37,842</span>
+  <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1265,6 +1340,9 @@ body::before{
   </div>
   <span class="f-msrp">€340</span>
   <span class="f-inr">₹37,842</span>
+  
+  <span class="f-inr-mob">₹37,842</span>
+  <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1276,6 +1354,9 @@ body::before{
   </div>
   <span class="f-msrp">€295</span>
   <span class="f-inr">₹32,834</span>
+  
+  <span class="f-inr-mob">₹32,834</span>
+  <span class="f-save">Save ₹2,734</span>
   <span class="f-pr">₹30,100</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1287,6 +1368,9 @@ body::before{
   </div>
   <span class="f-msrp">€295</span>
   <span class="f-inr">₹32,834</span>
+  
+  <span class="f-inr-mob">₹32,834</span>
+  <span class="f-save">Save ₹2,734</span>
   <span class="f-pr">₹30,100</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1298,6 +1382,9 @@ body::before{
   </div>
   <span class="f-msrp">€340</span>
   <span class="f-inr">₹37,842</span>
+  
+  <span class="f-inr-mob">₹37,842</span>
+  <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1312,6 +1399,9 @@ body::before{
   </div>
   <span class="f-msrp">£490</span>
   <span class="f-inr">₹63,151</span>
+  
+  <span class="f-inr-mob">₹63,151</span>
+  <span class="f-save">Save ₹20,151</span>
   <span class="f-pr">₹43,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1323,6 +1413,9 @@ body::before{
   </div>
   <span class="f-msrp">£310</span>
   <span class="f-inr">₹39,953</span>
+  
+  <span class="f-inr-mob">₹39,953</span>
+  <span class="f-save">Save ₹9,953</span>
   <span class="f-pr">₹30,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1348,6 +1441,9 @@ body::before{
   </div>
   <span class="f-msrp">₹22,000</span>
   <span class="f-inr">₹22,000</span>
+  
+  <span class="f-inr-mob">₹22,000</span>
+  <span class="f-save">Save ₹3,500</span>
   <span class="f-pr">₹18,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1362,6 +1458,9 @@ body::before{
   </div>
   <span class="f-msrp">€180</span>
   <span class="f-inr">₹20,034</span>
+  
+  <span class="f-inr-mob">₹20,034</span>
+  <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1373,6 +1472,9 @@ body::before{
   </div>
   <span class="f-msrp">€180</span>
   <span class="f-inr">₹20,034</span>
+  
+  <span class="f-inr-mob">₹20,034</span>
+  <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1384,6 +1486,9 @@ body::before{
   </div>
   <span class="f-msrp">€180</span>
   <span class="f-inr">₹20,034</span>
+  
+  <span class="f-inr-mob">₹20,034</span>
+  <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1398,6 +1503,9 @@ body::before{
   </div>
   <span class="f-msrp">€160</span>
   <span class="f-inr">₹17,808</span>
+  
+  <span class="f-inr-mob">₹17,808</span>
+  <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1409,6 +1517,9 @@ body::before{
   </div>
   <span class="f-msrp">€160</span>
   <span class="f-inr">₹17,808</span>
+  
+  <span class="f-inr-mob">₹17,808</span>
+  <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1420,6 +1531,9 @@ body::before{
   </div>
   <span class="f-msrp">€160</span>
   <span class="f-inr">₹17,808</span>
+  
+  <span class="f-inr-mob">₹17,808</span>
+  <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1431,6 +1545,9 @@ body::before{
   </div>
   <span class="f-msrp">€160</span>
   <span class="f-inr">₹17,808</span>
+  
+  <span class="f-inr-mob">₹17,808</span>
+  <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1442,6 +1559,9 @@ body::before{
   </div>
   <span class="f-msrp">€160</span>
   <span class="f-inr">₹17,808</span>
+  
+  <span class="f-inr-mob">₹17,808</span>
+  <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1456,6 +1576,9 @@ body::before{
   </div>
   <span class="f-msrp">$385</span>
   <span class="f-inr">₹36,525</span>
+  
+  <span class="f-inr-mob">₹36,525</span>
+  <span class="f-save">Save ₹6,225</span>
   <span class="f-pr">₹30,300</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1470,6 +1593,9 @@ body::before{
   </div>
   <span class="f-msrp">€249</span>
   <span class="f-inr">₹27,714</span>
+  
+  <span class="f-inr-mob">₹27,714</span>
+  <span class="f-save">Save ₹7,014</span>
   <span class="f-pr">₹20,700</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1484,6 +1610,9 @@ body::before{
   </div>
   <span class="f-msrp">£595</span>
   <span class="f-inr">₹76,684</span>
+  
+  <span class="f-inr-mob">₹76,684</span>
+  <span class="f-save">Save ₹24,684</span>
   <span class="f-pr">₹52,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1495,6 +1624,9 @@ body::before{
   </div>
   <span class="f-msrp">£265</span>
   <span class="f-inr">₹34,153</span>
+  
+  <span class="f-inr-mob">₹34,153</span>
+  <span class="f-save">Save ₹6,153</span>
   <span class="f-pr">₹28,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1506,6 +1638,9 @@ body::before{
   </div>
   <span class="f-msrp">£295</span>
   <span class="f-inr">₹38,020</span>
+  
+  <span class="f-inr-mob">₹38,020</span>
+  <span class="f-save">Save ₹6,020</span>
   <span class="f-pr">₹32,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1517,6 +1652,9 @@ body::before{
   </div>
   <span class="f-msrp">£695</span>
   <span class="f-inr">₹89,572</span>
+  
+  <span class="f-inr-mob">₹89,572</span>
+  <span class="f-save">Save ₹12,572</span>
   <span class="f-pr">₹77,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1528,6 +1666,9 @@ body::before{
   </div>
   <span class="f-msrp">£395</span>
   <span class="f-inr">₹50,908</span>
+  
+  <span class="f-inr-mob">₹50,908</span>
+  <span class="f-save">Save ₹6,908</span>
   <span class="f-pr">₹44,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1542,6 +1683,9 @@ body::before{
   </div>
   <span class="f-msrp">€310</span>
   <span class="f-inr">₹34,503</span>
+  
+  <span class="f-inr-mob">₹34,503</span>
+  <span class="f-save">Save ₹6,003</span>
   <span class="f-pr">₹28,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1556,6 +1700,9 @@ body::before{
   </div>
   <span class="f-msrp">€145</span>
   <span class="f-inr">₹16,138</span>
+  
+  <span class="f-inr-mob">₹16,138</span>
+  <span class="f-save">Save ₹4,638</span>
   <span class="f-pr">₹11,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1570,6 +1717,9 @@ body::before{
   </div>
   <span class="f-msrp">€280</span>
   <span class="f-inr">₹31,164</span>
+  
+  <span class="f-inr-mob">₹31,164</span>
+  <span class="f-save">Save ₹9,964</span>
   <span class="f-pr">₹21,200</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1581,6 +1731,9 @@ body::before{
   </div>
   <span class="f-msrp">€280</span>
   <span class="f-inr">₹31,164</span>
+  
+  <span class="f-inr-mob">₹31,164</span>
+  <span class="f-save">Save ₹9,964</span>
   <span class="f-pr">₹21,200</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1592,6 +1745,9 @@ body::before{
   </div>
   <span class="f-msrp">€280</span>
   <span class="f-inr">₹31,164</span>
+  
+  <span class="f-inr-mob">₹31,164</span>
+  <span class="f-save">Save ₹9,964</span>
   <span class="f-pr">₹21,200</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1603,6 +1759,9 @@ body::before{
   </div>
   <span class="f-msrp">€320</span>
   <span class="f-inr">₹35,616</span>
+  
+  <span class="f-inr-mob">₹35,616</span>
+  <span class="f-save">Save ₹5,616</span>
   <span class="f-pr">₹30,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1614,6 +1773,9 @@ body::before{
   </div>
   <span class="f-msrp">€280</span>
   <span class="f-inr">₹31,164</span>
+  
+  <span class="f-inr-mob">₹31,164</span>
+  <span class="f-save">Save ₹9,964</span>
   <span class="f-pr">₹21,200</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1628,6 +1790,9 @@ body::before{
   </div>
   <span class="f-msrp">$285</span>
   <span class="f-inr">₹27,038</span>
+  
+  <span class="f-inr-mob">₹27,038</span>
+  <span class="f-save">Save ₹7,038</span>
   <span class="f-pr">₹20,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1639,6 +1804,9 @@ body::before{
   </div>
   <span class="f-msrp">$175</span>
   <span class="f-inr">₹16,602</span>
+  
+  <span class="f-inr-mob">₹16,602</span>
+  <span class="f-save">Save ₹1,602</span>
   <span class="f-pr">₹15,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1653,6 +1821,9 @@ body::before{
   </div>
   <span class="f-msrp">€230</span>
   <span class="f-inr">₹25,599</span>
+  
+  <span class="f-inr-mob">₹25,599</span>
+  <span class="f-save">Save ₹1,599</span>
   <span class="f-pr">₹24,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1664,6 +1835,9 @@ body::before{
   </div>
   <span class="f-msrp">€426</span>
   <span class="f-inr">₹47,414</span>
+  
+  <span class="f-inr-mob">₹47,414</span>
+  <span class="f-save">Save ₹8,914</span>
   <span class="f-pr">₹38,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1675,6 +1849,9 @@ body::before{
   </div>
   <span class="f-msrp">€247</span>
   <span class="f-inr">₹27,491</span>
+  
+  <span class="f-inr-mob">₹27,491</span>
+  <span class="f-save">Save ₹1,091</span>
   <span class="f-pr">₹26,400</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1689,6 +1866,9 @@ body::before{
   </div>
   <span class="f-msrp">€445</span>
   <span class="f-inr">₹49,528</span>
+  
+  <span class="f-inr-mob">₹49,528</span>
+  <span class="f-save">Save ₹14,528</span>
   <span class="f-pr">₹35,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1700,6 +1880,9 @@ body::before{
   </div>
   <span class="f-msrp">€255</span>
   <span class="f-inr">₹28,382</span>
+  
+  <span class="f-inr-mob">₹28,382</span>
+  <span class="f-save">Save ₹8,882</span>
   <span class="f-pr">₹19,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1711,6 +1894,9 @@ body::before{
   </div>
   <span class="f-msrp">€255</span>
   <span class="f-inr">₹28,382</span>
+  
+  <span class="f-inr-mob">₹28,382</span>
+  <span class="f-save">Save ₹8,882</span>
   <span class="f-pr">₹19,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1725,6 +1911,9 @@ body::before{
   </div>
   <span class="f-msrp">$340</span>
   <span class="f-inr">₹32,256</span>
+  
+  <span class="f-inr-mob">₹32,256</span>
+  <span class="f-save">Save ₹6,256</span>
   <span class="f-pr">₹26,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1736,6 +1925,9 @@ body::before{
   </div>
   <span class="f-msrp">$535</span>
   <span class="f-inr">₹50,755</span>
+  
+  <span class="f-inr-mob">₹50,755</span>
+  <span class="f-save">Save ₹8,255</span>
   <span class="f-pr">₹42,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1750,6 +1942,9 @@ body::before{
   </div>
   <span class="f-msrp">$395</span>
   <span class="f-inr">₹37,474</span>
+  
+  <span class="f-inr-mob">₹37,474</span>
+  <span class="f-save">Save ₹6,474</span>
   <span class="f-pr">₹31,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1761,6 +1956,9 @@ body::before{
   </div>
   <span class="f-msrp">$395</span>
   <span class="f-inr">₹37,474</span>
+  
+  <span class="f-inr-mob">₹37,474</span>
+  <span class="f-save">Save ₹6,474</span>
   <span class="f-pr">₹31,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1772,6 +1970,9 @@ body::before{
   </div>
   <span class="f-msrp">$395</span>
   <span class="f-inr">₹37,474</span>
+  
+  <span class="f-inr-mob">₹37,474</span>
+  <span class="f-save">Save ₹6,474</span>
   <span class="f-pr">₹31,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1800,6 +2001,9 @@ body::before{
   </div>
   <span class="f-msrp">€290</span>
   <span class="f-inr">₹32,277</span>
+  
+  <span class="f-inr-mob">₹32,277</span>
+  <span class="f-save">Save ₹4,777</span>
   <span class="f-pr">₹27,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1811,6 +2015,9 @@ body::before{
   </div>
   <span class="f-msrp">€225</span>
   <span class="f-inr">₹25,042</span>
+  
+  <span class="f-inr-mob">₹25,042</span>
+  <span class="f-save">Save ₹4,542</span>
   <span class="f-pr">₹20,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1822,6 +2029,9 @@ body::before{
   </div>
   <span class="f-msrp">€390</span>
   <span class="f-inr">₹43,407</span>
+  
+  <span class="f-inr-mob">₹43,407</span>
+  <span class="f-save">Save ₹11,907</span>
   <span class="f-pr">₹31,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1833,6 +2043,9 @@ body::before{
   </div>
   <span class="f-msrp">€225</span>
   <span class="f-inr">₹25,042</span>
+  
+  <span class="f-inr-mob">₹25,042</span>
+  <span class="f-save">Save ₹5,042</span>
   <span class="f-pr">₹20,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1847,6 +2060,9 @@ body::before{
   </div>
   <span class="f-msrp">€180</span>
   <span class="f-inr">₹20,034</span>
+  
+  <span class="f-inr-mob">₹20,034</span>
+  <span class="f-save">Save ₹4,034</span>
   <span class="f-pr">₹16,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1858,6 +2074,9 @@ body::before{
   </div>
   <span class="f-msrp">€180</span>
   <span class="f-inr">₹20,034</span>
+  
+  <span class="f-inr-mob">₹20,034</span>
+  <span class="f-save">Save ₹4,034</span>
   <span class="f-pr">₹16,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1869,6 +2088,9 @@ body::before{
   </div>
   <span class="f-msrp">€285</span>
   <span class="f-inr">₹31,720</span>
+  
+  <span class="f-inr-mob">₹31,720</span>
+  <span class="f-save">Save ₹13,720</span>
   <span class="f-pr">₹18,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1883,6 +2105,9 @@ body::before{
   </div>
   <span class="f-msrp">€495</span>
   <span class="f-inr">₹55,094</span>
+  
+  <span class="f-inr-mob">₹55,094</span>
+  <span class="f-save">Save ₹10,094</span>
   <span class="f-pr">₹45,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1894,6 +2119,9 @@ body::before{
   </div>
   <span class="f-msrp">€315</span>
   <span class="f-inr">₹35,060</span>
+  
+  <span class="f-inr-mob">₹35,060</span>
+  <span class="f-save">Save ₹5,060</span>
   <span class="f-pr">₹30,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1908,6 +2136,9 @@ body::before{
   </div>
   <span class="f-msrp">£325</span>
   <span class="f-inr">₹41,886</span>
+  
+  <span class="f-inr-mob">₹41,886</span>
+  <span class="f-save">Save ₹10,086</span>
   <span class="f-pr">₹31,800</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1919,6 +2150,9 @@ body::before{
   </div>
   <span class="f-msrp">£325</span>
   <span class="f-inr">₹41,886</span>
+  
+  <span class="f-inr-mob">₹41,886</span>
+  <span class="f-save">Save ₹10,086</span>
   <span class="f-pr">₹31,800</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1930,6 +2164,9 @@ body::before{
   </div>
   <span class="f-msrp">£200</span>
   <span class="f-inr">₹25,776</span>
+  
+  <span class="f-inr-mob">₹25,776</span>
+  <span class="f-save">Save ₹2,776</span>
   <span class="f-pr">₹23,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1944,6 +2181,9 @@ body::before{
   </div>
   <span class="f-msrp">€537</span>
   <span class="f-inr">₹59,768</span>
+  
+  <span class="f-inr-mob">₹59,768</span>
+  <span class="f-save">Save ₹24,768</span>
   <span class="f-pr">₹35,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1955,6 +2195,9 @@ body::before{
   </div>
   <span class="f-msrp">€455</span>
   <span class="f-inr">₹50,642</span>
+  
+  <span class="f-inr-mob">₹50,642</span>
+  <span class="f-save">Save ₹15,642</span>
   <span class="f-pr">₹35,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1969,6 +2212,9 @@ body::before{
   </div>
   <span class="f-msrp">$362</span>
   <span class="f-inr">₹34,343</span>
+  
+  <span class="f-inr-mob">₹34,343</span>
+  <span class="f-save">Save ₹3,843</span>
   <span class="f-pr">₹30,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1983,6 +2229,9 @@ body::before{
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
+  
+  <span class="f-inr-mob">₹27,825</span>
+  <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -1994,6 +2243,9 @@ body::before{
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
+  
+  <span class="f-inr-mob">₹27,825</span>
+  <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2005,6 +2257,9 @@ body::before{
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
+  
+  <span class="f-inr-mob">₹27,825</span>
+  <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2016,6 +2271,9 @@ body::before{
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
+  
+  <span class="f-inr-mob">₹27,825</span>
+  <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2027,6 +2285,9 @@ body::before{
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
+  
+  <span class="f-inr-mob">₹27,825</span>
+  <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2041,6 +2302,9 @@ body::before{
   </div>
   <span class="f-msrp">€275</span>
   <span class="f-inr">₹30,608</span>
+  
+  <span class="f-inr-mob">₹30,608</span>
+  <span class="f-save">Save ₹6,008</span>
   <span class="f-pr">₹24,600</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2052,6 +2316,9 @@ body::before{
   </div>
   <span class="f-msrp">€545</span>
   <span class="f-inr">₹60,658</span>
+  
+  <span class="f-inr-mob">₹60,658</span>
+  <span class="f-save">Save ₹13,658</span>
   <span class="f-pr">₹47,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2063,6 +2330,9 @@ body::before{
   </div>
   <span class="f-msrp">€325</span>
   <span class="f-inr">₹36,172</span>
+  
+  <span class="f-inr-mob">₹36,172</span>
+  <span class="f-save">Save ₹6,172</span>
   <span class="f-pr">₹30,000</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2074,6 +2344,9 @@ body::before{
   </div>
   <span class="f-msrp">€175</span>
   <span class="f-inr">₹19,478</span>
+  
+  <span class="f-inr-mob">₹19,478</span>
+  <span class="f-save">Save ₹1,078</span>
   <span class="f-pr">₹18,400</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2085,6 +2358,9 @@ body::before{
   </div>
   <span class="f-msrp">€360</span>
   <span class="f-inr">₹40,068</span>
+  
+  <span class="f-inr-mob">₹40,068</span>
+  <span class="f-save">Save ₹9,568</span>
   <span class="f-pr">₹30,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2096,6 +2372,9 @@ body::before{
   </div>
   <span class="f-msrp">€275</span>
   <span class="f-inr">₹30,608</span>
+  
+  <span class="f-inr-mob">₹30,608</span>
+  <span class="f-save">Save ₹10,108</span>
   <span class="f-pr">₹20,500</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
@@ -2107,6 +2386,9 @@ body::before{
   </div>
   <span class="f-msrp">€275</span>
   <span class="f-inr">₹30,608</span>
+  
+  <span class="f-inr-mob">₹30,608</span>
+  <span class="f-save">Save ₹10,008</span>
   <span class="f-pr">₹20,600</span>
   <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
 </div>
