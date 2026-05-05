@@ -375,7 +375,7 @@ body::before{
 .b-nm{
   font-family:var(--fB);font-weight:700;
   font-size:clamp(14px,3.5vw,26px);
-  line-height:1;color:var(--ink);
+  line-height:1;color:#A8190A;
   letter-spacing:0.28em;
   text-transform:uppercase;
 }
@@ -641,7 +641,7 @@ body::before{
   .f-inr-mob{grid-column:2;grid-row:1;font-size:10px;text-align:right;}
   .f-save{grid-column:2;grid-row:2;font-size:9px;text-align:right;}
   .f-pr{grid-column:2;grid-row:3;font-size:16px;text-align:right;}
-  .add-btn{grid-column:3;grid-row:1 / 4;align-self:center;min-height:44px;font-size:9px;padding:6px 8px;}
+  .add-btn{grid-column:3;grid-row:1/5;align-self:center;min-width:52px;}
   .f-msrp,.f-inr{display:none;}
   .f-mob{display:inline;font-size:12px;}
   .f-msrp,.f-inr{display:none;}
@@ -650,7 +650,7 @@ body::before{
   .f-pr{font-size:16px;}
   .f-worn{font-size:12px;}
   .f-sub{font-size:10px;}
-  .add-btn{font-size:8px;padding:6px 8px;min-height:36px;}
+  .add-btn{font-size:9px;padding:4px 8px;min-height:36px;}
   .s-nav-back,.s-nav-bkt{font-size:10px;padding:12px 12px;}
   .fbar{padding:0;}
   .fb{font-size:7.5px;padding:9px 10px;}
@@ -882,25 +882,35 @@ body::before{
 }
 
 
-.qty-ctrl{
-  display:none;
-  align-items:center;gap:0;
-  border:1px solid var(--rule);
+.add-btn.in-basket{
+  display:inline-flex;align-items:stretch;gap:0;
+  padding:0;overflow:hidden;
+  border-color:var(--ink);background:transparent;
+  color:var(--ink);
 }
-.qty-ctrl.show{display:flex;}
-.qty-btn{
-  font-family:var(--fC);font-size:14px;font-weight:700;
-  background:transparent;border:none;
-  color:var(--ink);padding:2px 8px;cursor:pointer;
-  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
-  min-height:36px;line-height:1;
+.add-btn.in-basket .ab-minus,
+.add-btn.in-basket .ab-plus{
+  font-size:14px;font-weight:700;font-family:var(--fC);
+  padding:0 8px;height:100%;min-height:34px;
+  display:flex;align-items:center;
+  background:transparent;border:none;cursor:pointer;
+  color:var(--ink);
+  touch-action:manipulation;
 }
-.qty-btn:active{background:var(--paper2);}
-.qty-num{
+.add-btn.in-basket .ab-minus:active,
+.add-btn.in-basket .ab-plus:active{background:var(--paper2);}
+.add-btn.in-basket .ab-num{
   font-family:var(--fC);font-size:12px;font-weight:700;
-  color:var(--ink);min-width:20px;text-align:center;
-  pointer-events:none;
+  color:var(--ink);min-width:22px;text-align:center;
+  border-left:1px solid var(--rule);border-right:1px solid var(--rule);
+  padding:0 2px;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;
 }
+.add-btn .ab-minus,.add-btn .ab-plus,.add-btn .ab-num{display:none;}
+.add-btn.in-basket .ab-label{display:none;}
+.add-btn.in-basket .ab-minus,
+.add-btn.in-basket .ab-plus,
+.add-btn.in-basket .ab-num{display:flex;}
 
 </style>
 </head>
@@ -1108,8 +1118,7 @@ body::before{
   <span class="f-inr-mob">₹55,499</span>
   <span class="f-save">Save ₹9,999</span>
   <span class="f-pr">₹45,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Epic Man" data-size="100ml" data-price="29500" data-profile="Woody / Aromatic">
   <div class="f-main">
@@ -1123,8 +1132,7 @@ body::before{
   <span class="f-inr-mob">₹39,845</span>
   <span class="f-save">Save ₹10,345</span>
   <span class="f-pr">₹29,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Gold Man" data-size="100ml" data-price="33500" data-profile="Woody / Aromatic">
   <div class="f-main">
@@ -1138,8 +1146,7 @@ body::before{
   <span class="f-inr-mob">₹39,845</span>
   <span class="f-save">Save ₹6,345</span>
   <span class="f-pr">₹33,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Interlude Black Iris Man" data-size="100ml" data-price="34500" data-profile="Woody / Aromatic">
   <div class="f-main">
@@ -1153,8 +1160,7 @@ body::before{
   <span class="f-inr-mob">₹39,845</span>
   <span class="f-save">Save ₹5,345</span>
   <span class="f-pr">₹34,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Interlude Man" data-size="100ml" data-price="34500" data-profile="Woody / Aromatic">
   <div class="f-main">
@@ -1168,8 +1174,7 @@ body::before{
   <span class="f-inr-mob">₹39,845</span>
   <span class="f-save">Save ₹5,345</span>
   <span class="f-pr">₹34,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Line 618" data-size="100ml" data-price="40000" data-profile="Woody / Aromatic">
   <div class="f-main">
@@ -1183,8 +1188,7 @@ body::before{
   <span class="f-inr-mob">₹46,961</span>
   <span class="f-save">Save ₹6,961</span>
   <span class="f-pr">₹40,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Opus XV King Blue" data-size="100ml" data-price="45500" data-profile="Amber / Woody">
   <div class="f-main">
@@ -1198,8 +1202,7 @@ body::before{
   <span class="f-inr-mob">₹55,499</span>
   <span class="f-save">Save ₹9,999</span>
   <span class="f-pr">₹45,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Outlands" data-size="100ml" data-price="40000" data-profile="Spicy / Dark">
   <div class="f-main">
@@ -1213,8 +1216,7 @@ body::before{
   <span class="f-inr-mob">₹46,961</span>
   <span class="f-save">Save ₹6,961</span>
   <span class="f-pr">₹40,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Overture Woman" data-size="100ml" data-price="32800" data-profile="Amber / Woody">
   <div class="f-main">
@@ -1228,8 +1230,7 @@ body::before{
   <span class="f-inr-mob">₹39,845</span>
   <span class="f-save">Save ₹7,045</span>
   <span class="f-pr">₹32,800</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="bdk parfums">
@@ -1246,8 +1247,7 @@ body::before{
   <span class="f-inr-mob">₹31,164</span>
   <span class="f-save">Save ₹5,964</span>
   <span class="f-pr">₹25,200</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Pas Ce Soir" data-size="100ml" data-price="25200" data-profile="Floral">
   <div class="f-main">
@@ -1261,8 +1261,7 @@ body::before{
   <span class="f-inr-mob">₹31,164</span>
   <span class="f-save">Save ₹5,964</span>
   <span class="f-pr">₹25,200</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="bois 1920">
@@ -1279,8 +1278,7 @@ body::before{
   <span class="f-inr-mob">₹18,364</span>
   <span class="f-save">Save ₹3,864</span>
   <span class="f-pr">₹14,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Cannabis Fruttata" data-size="100ml" data-price="14500" data-profile="Aromatic Fruity">
   <div class="f-main">
@@ -1294,8 +1292,7 @@ body::before{
   <span class="f-inr-mob">₹18,364</span>
   <span class="f-save">Save ₹3,864</span>
   <span class="f-pr">₹14,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Real Patchouly" data-size="100ml" data-price="14500" data-profile="Oriental / Woody">
   <div class="f-main">
@@ -1309,8 +1306,7 @@ body::before{
   <span class="f-inr-mob">₹18,364</span>
   <span class="f-save">Save ₹3,864</span>
   <span class="f-pr">₹14,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="bvlgari">
@@ -1327,8 +1323,7 @@ body::before{
   <span class="f-inr-mob">₹65,460</span>
   <span class="f-save">Save ₹25,060</span>
   <span class="f-pr">₹40,400</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="byredo">
@@ -1345,8 +1340,7 @@ body::before{
   <span class="f-inr-mob">₹32,834</span>
   <span class="f-save">Save ₹2,834</span>
   <span class="f-pr">₹30,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Blanche" data-size="100ml" data-price="30000" data-profile="Floral">
   <div class="f-main">
@@ -1360,8 +1354,7 @@ body::before{
   <span class="f-inr-mob">₹32,834</span>
   <span class="f-save">Save ₹2,834</span>
   <span class="f-pr">₹30,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Bois Obscur" data-size="70ml" data-price="35100" data-profile="Oriental Woody">
   <div class="f-main">
@@ -1375,8 +1368,7 @@ body::before{
   <span class="f-inr-mob">₹37,842</span>
   <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Casablanca Lily" data-size="70ml" data-price="35100" data-profile="Amber Floral">
   <div class="f-main">
@@ -1390,8 +1382,7 @@ body::before{
   <span class="f-inr-mob">₹37,842</span>
   <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Mojave Ghost" data-size="100ml" data-price="30100" data-profile="Woody">
   <div class="f-main">
@@ -1405,8 +1396,7 @@ body::before{
   <span class="f-inr-mob">₹32,834</span>
   <span class="f-save">Save ₹2,734</span>
   <span class="f-pr">₹30,100</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Rose Of No Man's Land" data-size="100ml" data-price="30100" data-profile="Oriental Floral">
   <div class="f-main">
@@ -1420,8 +1410,7 @@ body::before{
   <span class="f-inr-mob">₹32,834</span>
   <span class="f-save">Save ₹2,734</span>
   <span class="f-pr">₹30,100</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Vanille Antique" data-size="70ml" data-price="35100" data-profile="Oriental Woody">
   <div class="f-main">
@@ -1435,8 +1424,7 @@ body::before{
   <span class="f-inr-mob">₹37,842</span>
   <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="clive christian">
@@ -1453,8 +1441,7 @@ body::before{
   <span class="f-inr-mob">₹63,151</span>
   <span class="f-save">Save ₹20,151</span>
   <span class="f-pr">₹43,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="X Masculine" data-size="50ml" data-price="30000" data-profile="Woody / Aromatic">
   <div class="f-main">
@@ -1468,8 +1455,7 @@ body::before{
   <span class="f-inr-mob">₹39,953</span>
   <span class="f-save">Save ₹9,953</span>
   <span class="f-pr">₹30,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="comme des garcons">
@@ -1483,8 +1469,7 @@ body::before{
   <span class="f-msrp">Grey Market</span>
   <span class="f-inr">—</span>
   <span class="f-pr">₹24,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Man" data-size="100ml" data-price="18500" data-profile="Woody Chypre">
   <div class="f-main">
@@ -1498,8 +1483,7 @@ body::before{
   <span class="f-inr-mob">₹22,000</span>
   <span class="f-save">Save ₹3,500</span>
   <span class="f-pr">₹18,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="diptyque">
@@ -1516,8 +1500,7 @@ body::before{
   <span class="f-inr-mob">₹20,034</span>
   <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Eau Capitale" data-size="75ml" data-price="18000" data-profile="Chypre Floral">
   <div class="f-main">
@@ -1531,8 +1514,7 @@ body::before{
   <span class="f-inr-mob">₹20,034</span>
   <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Vetyverio" data-size="75ml" data-price="18000" data-profile="Floral Woody Musk">
   <div class="f-main">
@@ -1546,8 +1528,7 @@ body::before{
   <span class="f-inr-mob">₹20,034</span>
   <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="etat libre d'orange">
@@ -1564,8 +1545,7 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Fat Electrician" data-size="100ml" data-price="13000" data-profile="Amber Woody">
   <div class="f-main">
@@ -1579,8 +1559,7 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Rien" data-size="100ml" data-price="13000" data-profile="Amber Woody">
   <div class="f-main">
@@ -1594,8 +1573,7 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Rien Intense Incense" data-size="100ml" data-price="13000" data-profile="Amber Woody">
   <div class="f-main">
@@ -1609,8 +1587,7 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="The Afternoon Of A Faun" data-size="100ml" data-price="13000" data-profile="Aromatic Spicy">
   <div class="f-main">
@@ -1624,8 +1601,7 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="ex nihilo">
@@ -1642,8 +1618,7 @@ body::before{
   <span class="f-inr-mob">₹36,525</span>
   <span class="f-save">Save ₹6,225</span>
   <span class="f-pr">₹30,300</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="francesca bianchi">
@@ -1660,8 +1635,7 @@ body::before{
   <span class="f-inr-mob">₹27,714</span>
   <span class="f-save">Save ₹7,014</span>
   <span class="f-pr">₹20,700</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="fragrance du bois">
@@ -1678,8 +1652,7 @@ body::before{
   <span class="f-inr-mob">₹76,684</span>
   <span class="f-save">Save ₹24,684</span>
   <span class="f-pr">₹52,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Cannabis Intense" data-size="100ml" data-price="28000" data-profile="Fresh / Modern">
   <div class="f-main">
@@ -1693,8 +1666,7 @@ body::before{
   <span class="f-inr-mob">₹34,153</span>
   <span class="f-save">Save ₹6,153</span>
   <span class="f-pr">₹28,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Oud Noir Intense" data-size="50ml" data-price="32000" data-profile="Oud">
   <div class="f-main">
@@ -1708,8 +1680,7 @@ body::before{
   <span class="f-inr-mob">₹38,020</span>
   <span class="f-save">Save ₹6,020</span>
   <span class="f-pr">₹32,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Sahraa" data-size="100ml" data-price="77000" data-profile="Oud + Amber">
   <div class="f-main">
@@ -1723,8 +1694,7 @@ body::before{
   <span class="f-inr-mob">₹89,572</span>
   <span class="f-save">Save ₹12,572</span>
   <span class="f-pr">₹77,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Sahraa" data-size="50ml" data-price="44000" data-profile="Oud + Amber">
   <div class="f-main">
@@ -1738,8 +1708,7 @@ body::before{
   <span class="f-inr-mob">₹50,908</span>
   <span class="f-save">Save ₹6,908</span>
   <span class="f-pr">₹44,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="frederic malle">
@@ -1756,8 +1725,7 @@ body::before{
   <span class="f-inr-mob">₹34,503</span>
   <span class="f-save">Save ₹6,003</span>
   <span class="f-pr">₹28,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="fugazzi">
@@ -1774,8 +1742,7 @@ body::before{
   <span class="f-inr-mob">₹16,138</span>
   <span class="f-save">Save ₹4,638</span>
   <span class="f-pr">₹11,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="initio">
@@ -1792,8 +1759,7 @@ body::before{
   <span class="f-inr-mob">₹31,164</span>
   <span class="f-save">Save ₹9,964</span>
   <span class="f-pr">₹21,200</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Blessed Baraka" data-size="90ml" data-price="21200" data-profile="Amber">
   <div class="f-main">
@@ -1807,8 +1773,7 @@ body::before{
   <span class="f-inr-mob">₹31,164</span>
   <span class="f-save">Save ₹9,964</span>
   <span class="f-pr">₹21,200</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Can't Get Enough" data-size="90ml" data-price="21200" data-profile="Gourmand Floral">
   <div class="f-main">
@@ -1822,8 +1787,7 @@ body::before{
   <span class="f-inr-mob">₹31,164</span>
   <span class="f-save">Save ₹9,964</span>
   <span class="f-pr">₹21,200</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Oud For Greatness Neo" data-size="90ml" data-price="30000" data-profile="Aromatic Spicy">
   <div class="f-main">
@@ -1837,8 +1801,7 @@ body::before{
   <span class="f-inr-mob">₹35,616</span>
   <span class="f-save">Save ₹5,616</span>
   <span class="f-pr">₹30,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Psychedelic Love" data-size="90ml" data-price="21200" data-profile="Floral">
   <div class="f-main">
@@ -1852,8 +1815,7 @@ body::before{
   <span class="f-inr-mob">₹31,164</span>
   <span class="f-save">Save ₹9,964</span>
   <span class="f-pr">₹21,200</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="les liquides imaginaires">
@@ -1870,8 +1832,7 @@ body::before{
   <span class="f-inr-mob">₹27,038</span>
   <span class="f-save">Save ₹7,038</span>
   <span class="f-pr">₹20,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Dom Rosa" data-size="50ml" data-price="15000" data-profile="Fresh / Modern">
   <div class="f-main">
@@ -1885,8 +1846,7 @@ body::before{
   <span class="f-inr-mob">₹16,602</span>
   <span class="f-save">Save ₹1,602</span>
   <span class="f-pr">₹15,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="maison crivelli">
@@ -1903,8 +1863,7 @@ body::before{
   <span class="f-inr-mob">₹25,599</span>
   <span class="f-save">Save ₹1,599</span>
   <span class="f-pr">₹24,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Oud Stallion" data-size="100ml" data-price="38500" data-profile="Oud">
   <div class="f-main">
@@ -1918,8 +1877,7 @@ body::before{
   <span class="f-inr-mob">₹47,414</span>
   <span class="f-save">Save ₹8,914</span>
   <span class="f-pr">₹38,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Oud Stallion" data-size="50ml" data-price="26400" data-profile="Oud">
   <div class="f-main">
@@ -1933,8 +1891,7 @@ body::before{
   <span class="f-inr-mob">₹27,491</span>
   <span class="f-save">Save ₹1,091</span>
   <span class="f-pr">₹26,400</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="memo">
@@ -1951,8 +1908,7 @@ body::before{
   <span class="f-inr-mob">₹49,528</span>
   <span class="f-save">Save ₹14,528</span>
   <span class="f-pr">₹35,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Irish Leather" data-size="75ml" data-price="19500" data-profile="Leather">
   <div class="f-main">
@@ -1966,8 +1922,7 @@ body::before{
   <span class="f-inr-mob">₹28,382</span>
   <span class="f-save">Save ₹8,882</span>
   <span class="f-pr">₹19,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Oriental Leather" data-size="75ml" data-price="19500" data-profile="Leather">
   <div class="f-main">
@@ -1981,8 +1936,7 @@ body::before{
   <span class="f-inr-mob">₹28,382</span>
   <span class="f-save">Save ₹8,882</span>
   <span class="f-pr">₹19,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="mfk">
@@ -1999,8 +1953,7 @@ body::before{
   <span class="f-inr-mob">₹32,256</span>
   <span class="f-save">Save ₹6,256</span>
   <span class="f-pr">₹26,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Gentle Fluidity Gold" data-size="200ml" data-price="42500" data-profile="Amber">
   <div class="f-main">
@@ -2014,8 +1967,7 @@ body::before{
   <span class="f-inr-mob">₹50,755</span>
   <span class="f-save">Save ₹8,255</span>
   <span class="f-pr">₹42,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="mind games">
@@ -2032,8 +1984,7 @@ body::before{
   <span class="f-inr-mob">₹37,474</span>
   <span class="f-save">Save ₹6,474</span>
   <span class="f-pr">₹31,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Double Attack" data-size="100ml" data-price="31000" data-profile="Citrus Woody">
   <div class="f-main">
@@ -2047,8 +1998,7 @@ body::before{
   <span class="f-inr-mob">₹37,474</span>
   <span class="f-save">Save ₹6,474</span>
   <span class="f-pr">₹31,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Gambit" data-size="100ml" data-price="31000" data-profile="Woody Leathery">
   <div class="f-main">
@@ -2062,8 +2012,7 @@ body::before{
   <span class="f-inr-mob">₹37,474</span>
   <span class="f-save">Save ₹6,474</span>
   <span class="f-pr">₹31,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="papillon">
@@ -2077,8 +2026,7 @@ body::before{
   <span class="f-msrp">£145</span>
   <span class="f-inr">₹18,688</span>
   <span class="f-pr">₹18,600</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="parfums de marly">
@@ -2095,8 +2043,7 @@ body::before{
   <span class="f-inr-mob">₹32,277</span>
   <span class="f-save">Save ₹4,777</span>
   <span class="f-pr">₹27,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Layton" data-size="75ml" data-price="20500" data-profile="Amber Floral">
   <div class="f-main">
@@ -2110,8 +2057,7 @@ body::before{
   <span class="f-inr-mob">₹25,042</span>
   <span class="f-save">Save ₹4,542</span>
   <span class="f-pr">₹20,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Percival" data-size="200ml" data-price="31500" data-profile="Citrus Aromatic">
   <div class="f-main">
@@ -2125,8 +2071,7 @@ body::before{
   <span class="f-inr-mob">₹43,407</span>
   <span class="f-save">Save ₹11,907</span>
   <span class="f-pr">₹31,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Perseus" data-size="75ml" data-price="20000" data-profile="Woody Aromatic">
   <div class="f-main">
@@ -2140,8 +2085,7 @@ body::before{
   <span class="f-inr-mob">₹25,042</span>
   <span class="f-save">Save ₹5,042</span>
   <span class="f-pr">₹20,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="perris monte carlo">
@@ -2158,8 +2102,7 @@ body::before{
   <span class="f-inr-mob">₹20,034</span>
   <span class="f-save">Save ₹4,034</span>
   <span class="f-pr">₹16,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Bois D'Oud" data-size="100ml" data-price="16000" data-profile="Oud">
   <div class="f-main">
@@ -2173,8 +2116,7 @@ body::before{
   <span class="f-inr-mob">₹20,034</span>
   <span class="f-save">Save ₹4,034</span>
   <span class="f-pr">₹16,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Oud Imperial" data-size="50ml" data-price="18000" data-profile="Oud">
   <div class="f-main">
@@ -2188,8 +2130,7 @@ body::before{
   <span class="f-inr-mob">₹31,720</span>
   <span class="f-save">Save ₹13,720</span>
   <span class="f-pr">₹18,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="ramon monegal">
@@ -2206,8 +2147,7 @@ body::before{
   <span class="f-inr-mob">₹55,094</span>
   <span class="f-save">Save ₹10,094</span>
   <span class="f-pr">₹45,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Soul Of Oud" data-size="50ml" data-price="30000" data-profile="Oud + Amber">
   <div class="f-main">
@@ -2221,8 +2161,7 @@ body::before{
   <span class="f-inr-mob">₹35,060</span>
   <span class="f-save">Save ₹5,060</span>
   <span class="f-pr">₹30,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="roja">
@@ -2239,8 +2178,7 @@ body::before{
   <span class="f-inr-mob">₹41,886</span>
   <span class="f-save">Save ₹10,086</span>
   <span class="f-pr">₹31,800</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Aoud Extraordinaire" data-size="50ml" data-price="31800" data-profile="Oud + Amber">
   <div class="f-main">
@@ -2254,8 +2192,7 @@ body::before{
   <span class="f-inr-mob">₹41,886</span>
   <span class="f-save">Save ₹10,086</span>
   <span class="f-pr">₹31,800</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Vetiver" data-size="200ml" data-price="23000" data-profile="Chypre">
   <div class="f-main">
@@ -2269,8 +2206,7 @@ body::before{
   <span class="f-inr-mob">₹25,776</span>
   <span class="f-save">Save ₹2,776</span>
   <span class="f-pr">₹23,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="royal crown">
@@ -2287,8 +2223,7 @@ body::before{
   <span class="f-inr-mob">₹59,768</span>
   <span class="f-save">Save ₹24,768</span>
   <span class="f-pr">₹35,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Rain" data-size="100ml" data-price="35000" data-profile="Green Spicy Fresh">
   <div class="f-main">
@@ -2302,8 +2237,7 @@ body::before{
   <span class="f-inr-mob">₹50,642</span>
   <span class="f-save">Save ₹15,642</span>
   <span class="f-pr">₹35,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="sospiro">
@@ -2320,8 +2254,7 @@ body::before{
   <span class="f-inr-mob">₹34,343</span>
   <span class="f-save">Save ₹3,843</span>
   <span class="f-pr">₹30,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="vilhelm parfumerie">
@@ -2338,8 +2271,7 @@ body::before{
   <span class="f-inr-mob">₹27,825</span>
   <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Body Paint" data-size="100ml" data-price="19800" data-profile="Chypre Fruity">
   <div class="f-main">
@@ -2353,8 +2285,7 @@ body::before{
   <span class="f-inr-mob">₹27,825</span>
   <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Dear Polly" data-size="100ml" data-price="19800" data-profile="Aromatic">
   <div class="f-main">
@@ -2368,8 +2299,7 @@ body::before{
   <span class="f-inr-mob">₹27,825</span>
   <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Room Service" data-size="100ml" data-price="19800" data-profile="Amber Floral">
   <div class="f-main">
@@ -2383,8 +2313,7 @@ body::before{
   <span class="f-inr-mob">₹27,825</span>
   <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="The Oud Affair" data-size="100ml" data-price="19800" data-profile="Amber Woody">
   <div class="f-main">
@@ -2398,8 +2327,7 @@ body::before{
   <span class="f-inr-mob">₹27,825</span>
   <span class="f-save">Save ₹8,025</span>
   <span class="f-pr">₹19,800</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 <div class="b-sec" data-brand="xerjoff">
@@ -2416,8 +2344,7 @@ body::before{
   <span class="f-inr-mob">₹30,608</span>
   <span class="f-save">Save ₹6,008</span>
   <span class="f-pr">₹24,600</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Alexandria II" data-size="100ml" data-price="47000" data-profile="Oud + Amber">
   <div class="f-main">
@@ -2431,8 +2358,7 @@ body::before{
   <span class="f-inr-mob">₹60,658</span>
   <span class="f-save">Save ₹13,658</span>
   <span class="f-pr">₹47,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Alexandria II" data-size="50ml" data-price="30000" data-profile="Oud + Amber">
   <div class="f-main">
@@ -2446,8 +2372,7 @@ body::before{
   <span class="f-inr-mob">₹36,172</span>
   <span class="f-save">Save ₹6,172</span>
   <span class="f-pr">₹30,000</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Alexandria II Travel" data-size="30ml" data-price="18400" data-profile="Oud + Amber">
   <div class="f-main">
@@ -2461,8 +2386,7 @@ body::before{
   <span class="f-inr-mob">₹19,478</span>
   <span class="f-save">Save ₹1,078</span>
   <span class="f-pr">₹18,400</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Ether" data-size="50ml" data-price="30500" data-profile="Fresh / Modern">
   <div class="f-main">
@@ -2476,8 +2400,7 @@ body::before{
   <span class="f-inr-mob">₹40,068</span>
   <span class="f-save">Save ₹9,568</span>
   <span class="f-pr">₹30,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Gao" data-size="50ml" data-price="20500" data-profile="Oud">
   <div class="f-main">
@@ -2491,8 +2414,7 @@ body::before{
   <span class="f-inr-mob">₹30,608</span>
   <span class="f-save">Save ₹10,108</span>
   <span class="f-pr">₹20,500</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 <div class="f-row" data-name="Groove Xcape" data-size="50ml" data-price="20600" data-profile="Fresh / Modern">
   <div class="f-main">
@@ -2506,8 +2428,7 @@ body::before{
   <span class="f-inr-mob">₹30,608</span>
   <span class="f-save">Save ₹10,008</span>
   <span class="f-pr">₹20,600</span>
-  <button class="add-btn" onclick="toggleItem(this)">+&nbsp;ADD</button>
-  <div class="qty-ctrl"><button class="qty-btn" onclick="qtyChange(this,-1)">−</button><span class="qty-num">1</span><button class="qty-btn" onclick="qtyChange(this,1)">+</button></div>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 </div>
@@ -2594,21 +2515,19 @@ function goBasket(){hide();p3.style.display='block';renderB();window.scrollTo(0,
 
 let bkt={};
 function toggleItem(btn){
+  // If clicking the button itself (not inner minus/plus), toggle add state
   const r=btn.closest('.f-row');
   const name=r.dataset.name,size=r.dataset.size,price=parseInt(r.dataset.price);
   const key=name+'|'+size;
   const sec=r.closest('.b-sec');
   const brand=sec?sec.querySelector('.b-nm').textContent:'';
-  const qtyCtrl=r.querySelector('.qty-ctrl');
-  const qtyNum=r.querySelector('.qty-num');
   if(bkt[key]){
     delete bkt[key];
-    btn.textContent='+ ADD';btn.classList.remove('in-basket');
-    if(qtyCtrl){qtyCtrl.classList.remove('show');qtyNum.textContent='1';}
+    btn.classList.remove('in-basket');
+    const n=btn.querySelector('.ab-num');if(n)n.textContent='1';
   } else {
     bkt[key]={name,size,price,brand,btn,qty:1};
-    btn.textContent='✓';btn.classList.add('in-basket');
-    if(qtyCtrl){qtyCtrl.classList.add('show');}
+    btn.classList.add('in-basket');
   }
   updateFab();
 }
@@ -2616,12 +2535,9 @@ function qtyChange(btn,delta){
   const r=btn.closest('.f-row');
   const name=r.dataset.name,size=r.dataset.size;
   const key=name+'|'+size;
-  const qtyNum=r.querySelector('.qty-num');
-  const addBtn=r.querySelector('.add-btn');
-  const qtyCtrl=r.querySelector('.qty-ctrl');
   if(!bkt[key])return;
-  bkt[key].qty=Math.max(1,( bkt[key].qty||1)+delta);
-  qtyNum.textContent=bkt[key].qty;
+  bkt[key].qty=Math.max(1,(bkt[key].qty||1)+delta);
+  btn.querySelector('.ab-num').textContent=bkt[key].qty;
   updateFab();
 }
 function updateFab(){
@@ -2648,7 +2564,7 @@ function renderB(){
     const it=bkt[k];const qty=it.qty||1;sub+=it.price*qty;
     const d=document.createElement('div');d.className='b-item';
     const sk=k.replace(/'/g,"\'");
-    d.innerHTML=`<button class="b-rm" onclick="rmItem('${sk}')" ontouchend="rmItem('${sk}')">×</button><div><div class="b-iname">${it.name}</div><div class="b-imeta">${it.brand} · ${it.size}</div></div><div class="b-ip">${fmt(it.price)}</div>`;
+    d.innerHTML=`<button class="b-rm" onclick="rmItem('${sk}')" ontouchend="rmItem('${sk}')">×</button><div><div class="b-iname">${it.name}${qty>1?' <span style="font-size:11px;color:var(--mid)">×'+qty+'</span>':''}</div><div class="b-imeta">${it.brand} · ${it.size}</div></div><div class="b-ip">${fmt(it.price*qty)}</div>`;
     c.insertBefore(d,e);
   });
   const disc=egg?sub*0.03:0,tot=sub-disc;
