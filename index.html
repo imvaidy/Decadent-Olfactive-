@@ -912,12 +912,53 @@ body::before{
 .add-btn.in-basket .ab-plus,
 .add-btn.in-basket .ab-num{display:flex;}
 
+
+.f-row.sold-out{opacity:0.45;}
+.f-row.sold-out .f-pr{text-decoration:line-through;color:var(--faint);}
+.f-row.sold-out .f-save{opacity:0;}
+.sold-out-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:transparent;color:var(--faint);
+  font-family:var(--fC);font-size:9px;letter-spacing:0.12em;
+  padding:6px 10px;text-transform:uppercase;cursor:default;
+  border:1px solid var(--rule);white-space:nowrap;
+}
+
+.f-badges{
+  display:flex;flex-wrap:wrap;gap:4px;margin-top:5px;
+}
+.f-badges span{margin-left:0!important;}
+
+#music-btn{
+  position:fixed;bottom:24px;right:24px;z-index:9999;
+  background:var(--paper);border:1px solid var(--rule);
+  color:var(--faint);font-family:var(--fC);font-size:10px;
+  letter-spacing:0.14em;padding:8px 13px;cursor:pointer;
+  text-transform:uppercase;transition:color 0.2s,border-color 0.2s;
+  display:flex;align-items:center;gap:6px;
+}
+#music-btn:hover{border-color:var(--mid);color:var(--ink);}
+#music-btn.playing{color:var(--ink);border-color:var(--ink);}
+#music-btn .mb-note{font-size:14px;line-height:1;}
+#music-btn .mb-bars{display:flex;align-items:flex-end;gap:2px;height:12px;}
+#music-btn .mb-bars span{
+  display:block;width:2px;background:currentColor;
+  animation:none;transform-origin:bottom;
+}
+#music-btn.playing .mb-bars span{animation:bar-dance 0.8s ease-in-out infinite alternate;}
+#music-btn.playing .mb-bars span:nth-child(1){animation-delay:0s;}
+#music-btn.playing .mb-bars span:nth-child(2){animation-delay:0.15s;}
+#music-btn.playing .mb-bars span:nth-child(3){animation-delay:0.3s;}
+@keyframes bar-dance{
+  from{height:3px;}
+  to{height:12px;}
+}
 </style>
 </head>
 <body>
 
 <!-- MARQUEE -->
-<div class="mq"><div class="mq-t"><span class="mq-i">DECADENT OLFACTIVE™  ·  89 FRAGRANCES  ·  29 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  DECADENT OLFACTIVE™  ·  89 FRAGRANCES  ·  29 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  </span><span class="mq-i" aria-hidden="true">DECADENT OLFACTIVE™  ·  89 FRAGRANCES  ·  29 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  DECADENT OLFACTIVE™  ·  89 FRAGRANCES  ·  29 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  </span></div></div>
+<div class="mq"><div class="mq-t"><span class="mq-i">DECADENT OLFACTIVE™  ·  98 FRAGRANCES  ·  33 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  DECADENT OLFACTIVE™  ·  98 FRAGRANCES  ·  33 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  </span><span class="mq-i" aria-hidden="true">DECADENT OLFACTIVE™  ·  98 FRAGRANCES  ·  33 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  DECADENT OLFACTIVE™  ·  98 FRAGRANCES  ·  33 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  </span></div></div>
 
 <!-- ═══ PAGE 1 ═══ -->
 <!-- ═══ PAGE 0 — INTRO ═══ -->
@@ -1014,7 +1055,7 @@ body::before{
   </div>
 
   <div class="fp-banner">
-    <div class="fp-banner-txt">May 2026 Stock Catalogue · 89 Curated Fragrances · 29 Houses</div>
+    <div class="fp-banner-txt">May 2026 Stock Catalogue · 98 Curated Fragrances · 33 Houses</div>
   </div>
 
   <div class="fp-body">
@@ -1029,11 +1070,11 @@ body::before{
     <div class="fp-datatable">
       <div class="fp-dt-cell">
         <span class="fp-dt-label">Total SKUs</span>
-        <span class="fp-dt-val r">89</span>
+        <span class="fp-dt-val r">98</span>
       </div>
       <div class="fp-dt-cell">
         <span class="fp-dt-label">Houses</span>
-        <span class="fp-dt-val">29</span>
+        <span class="fp-dt-val">33</span>
       </div>
       <div class="fp-dt-cell">
         <span class="fp-dt-label">Shipping</span>
@@ -1098,7 +1139,7 @@ body::before{
     <div class="mh-name">Decadent <span class="sub">Olfactive™</span></div>
     <div class="mh-meta">
       <span>May 2026 Stock Catalogue · Chennai</span>
-      <span class="mh-skubox">89 <small>SKUs</small></span>
+      <span class="mh-skubox">98 <small>SKUs</small></span>
       <span>USD ₹94.87 · EUR ₹111.30 · GBP ₹128.88</span>
     </div>
   </div>
@@ -1111,6 +1152,7 @@ body::before{
     <div class="f-nl"><a href="https://amouage.com/en-ap/products/new-dia-40-woman-100ml-exceptional-extrait" target="_blank" rel="noopener" class="f-nm">Dia 40 Woman</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#8B1A1A"></span><span class="f-pf">Floral Aldehyde</span><span class="f-mob"> · $585</span></div>
   <div class="f-worn">Corrects the sommelier. Always right.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">$585</span>
   <span class="f-inr">₹55,499</span>
@@ -1125,6 +1167,7 @@ body::before{
     <div class="f-nl"><a href="https://amouage.com/en-ap/products/epic-man-100ml" target="_blank" rel="noopener" class="f-nm">Epic Man</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#1A3A1A"></span><span class="f-pf">Woody / Aromatic</span><span class="f-mob"> · $420</span></div>
   <div class="f-worn">Sketches on hotel napkins at 2am. The napkins are good.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">$420</span>
   <span class="f-inr">₹39,845</span>
@@ -1195,6 +1238,7 @@ body::before{
     <div class="f-nl"><a href="https://amouage.com/en-ap/products/opus-xv-king-blue" target="_blank" rel="noopener" class="f-nm">Opus XV King Blue</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber / Woody</span><span class="f-mob"> · $585</span></div>
   <div class="f-worn">The collector who doesn't show you the collection.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">$585</span>
   <span class="f-inr">₹55,499</span>
@@ -1204,7 +1248,7 @@ body::before{
   <span class="f-pr">₹45,500</span>
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
-<div class="f-row" data-name="Outlands" data-size="100ml" data-price="40000" data-profile="Spicy / Dark">
+<div class="f-row sold-out" data-name="Outlands" data-size="100ml" data-price="40000" data-profile="Spicy / Dark">
   <div class="f-main">
     <div class="f-nl"><a href="https://amouage.com/en-ap/products/new-outlands" target="_blank" rel="noopener" class="f-nm">Outlands</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#8B1A00"></span><span class="f-pf">Spicy / Dark</span><span class="f-mob"> · $495</span></div>
@@ -1216,7 +1260,7 @@ body::before{
   <span class="f-inr-mob">₹46,961</span>
   <span class="f-save">Save ₹6,961</span>
   <span class="f-pr">₹40,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 <div class="f-row" data-name="Overture Woman" data-size="100ml" data-price="32800" data-profile="Amber / Woody">
   <div class="f-main">
@@ -1233,6 +1277,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="bdk parfums">
 <div class="b-hd"><span class="b-nm">BDK PARFUMS</span><span class="b-cnt">2 SKUS</span></div>
 <div class="f-row" data-name="Gris Charnel" data-size="100ml" data-price="25200" data-profile="Spicy / Dark">
@@ -1264,6 +1309,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="bois 1920">
 <div class="b-hd"><span class="b-nm">BOIS 1920</span><span class="b-cnt">3 SKUS</span></div>
 <div class="f-row" data-name="Cannabis Dolce" data-size="100ml" data-price="14500" data-profile="Oriental">
@@ -1309,6 +1355,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="bvlgari">
 <div class="b-hd"><span class="b-nm">BVLGARI</span><span class="b-cnt">1 SKU</span></div>
 <div class="f-row" data-name="Le Gemme Tygar" data-size="125ml" data-price="40400" data-profile="Amber">
@@ -1316,6 +1363,7 @@ body::before{
     <div class="f-nl"><a href="https://www.bulgari.com/en-au/fragrances/bvlgari-le-gemme/bvlgari-le-gemme-tygar-eau-de-parfum-42170" target="_blank" rel="noopener" class="f-nm">Le Gemme Tygar</a></div>
     <div class="f-sub"><span class="f-sz">125ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · $690</span></div>
   <div class="f-worn">Presented the invoice without flinching.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span><span style="color:#A8190A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #A8190A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">ALMOST GONE</span></div>
   </div>
   <span class="f-msrp">$690</span>
   <span class="f-inr">₹65,460</span>
@@ -1326,6 +1374,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="byredo">
 <div class="b-hd"><span class="b-nm">BYREDO</span><span class="b-cnt">7 SKUS</span></div>
 <div class="f-row" data-name="Bal D'Afrique" data-size="100ml" data-price="30000" data-profile="Floral Woody Musk">
@@ -1356,7 +1405,7 @@ body::before{
   <span class="f-pr">₹30,000</span>
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
-<div class="f-row" data-name="Bois Obscur" data-size="70ml" data-price="35100" data-profile="Oriental Woody">
+<div class="f-row sold-out" data-name="Bois Obscur" data-size="70ml" data-price="35100" data-profile="Oriental Woody">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.byredo.com/eu_en/p/bois-obscur-night-veils-perfume-extract-70ml" target="_blank" rel="noopener" class="f-nm">Bois Obscur</a></div>
     <div class="f-sub"><span class="f-sz">70ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Oriental Woody</span><span class="f-mob"> · €340</span></div>
@@ -1368,9 +1417,9 @@ body::before{
   <span class="f-inr-mob">₹37,842</span>
   <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
-<div class="f-row" data-name="Casablanca Lily" data-size="70ml" data-price="35100" data-profile="Amber Floral">
+<div class="f-row sold-out" data-name="Casablanca Lily" data-size="70ml" data-price="35100" data-profile="Amber Floral">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.byredo.com/eu_en/p/casablanca-lily-night-veils-perfume-extract-70ml" target="_blank" rel="noopener" class="f-nm">Casablanca Lily</a></div>
     <div class="f-sub"><span class="f-sz">70ml</span><span class="f-dot" style="background:#7A3A00"></span><span class="f-pf">Amber Floral</span><span class="f-mob"> · €340</span></div>
@@ -1382,7 +1431,7 @@ body::before{
   <span class="f-inr-mob">₹37,842</span>
   <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 <div class="f-row" data-name="Mojave Ghost" data-size="100ml" data-price="30100" data-profile="Woody">
   <div class="f-main">
@@ -1412,7 +1461,7 @@ body::before{
   <span class="f-pr">₹30,100</span>
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
-<div class="f-row" data-name="Vanille Antique" data-size="70ml" data-price="35100" data-profile="Oriental Woody">
+<div class="f-row sold-out" data-name="Vanille Antique" data-size="70ml" data-price="35100" data-profile="Oriental Woody">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.byredo.com/eu_en/p/vanille-antique-night-veils-perfume-extract-70ml" target="_blank" rel="noopener" class="f-nm">Vanille Antique</a></div>
     <div class="f-sub"><span class="f-sz">70ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Oriental Woody</span><span class="f-mob"> · €340</span></div>
@@ -1424,16 +1473,18 @@ body::before{
   <span class="f-inr-mob">₹37,842</span>
   <span class="f-save">Save ₹2,742</span>
   <span class="f-pr">₹35,100</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 </div>
+
 <div class="b-sec" data-brand="clive christian">
 <div class="b-hd"><span class="b-nm">CLIVE CHRISTIAN</span><span class="b-cnt">2 SKUS</span></div>
-<div class="f-row" data-name="X Masculine" data-size="100ml" data-price="43000" data-profile="Woody / Aromatic">
+<div class="f-row sold-out" data-name="X Masculine" data-size="100ml" data-price="43000" data-profile="Woody / Aromatic">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.clivechristian.com/products/x-masculine" target="_blank" rel="noopener" class="f-nm">X Masculine</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#1A3A1A"></span><span class="f-pf">Woody / Aromatic</span><span class="f-mob"> · £490</span></div>
   <div class="f-worn">Books business class. Flies economy.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span><span style="color:#6A1A8A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #6A1A8A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">RARE FIND</span></div>
   </div>
   <span class="f-msrp">£490</span>
   <span class="f-inr">₹63,151</span>
@@ -1441,13 +1492,14 @@ body::before{
   <span class="f-inr-mob">₹63,151</span>
   <span class="f-save">Save ₹20,151</span>
   <span class="f-pr">₹43,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 <div class="f-row" data-name="X Masculine" data-size="50ml" data-price="30000" data-profile="Woody / Aromatic">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.clivechristian.com/products/x-masculine" target="_blank" rel="noopener" class="f-nm">X Masculine</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#1A3A1A"></span><span class="f-pf">Woody / Aromatic</span><span class="f-mob"> · £310</span></div>
   <div class="f-worn">Books business class. Flies economy.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span><span style="color:#A8190A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #A8190A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">ALMOST GONE</span><span style="color:#6A1A8A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #6A1A8A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">RARE FIND</span></div>
   </div>
   <span class="f-msrp">£310</span>
   <span class="f-inr">₹39,953</span>
@@ -1458,6 +1510,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="comme des garcons">
 <div class="b-hd"><span class="b-nm">COMME DES GARCONS</span><span class="b-cnt">2 SKUS</span></div>
 <div class="f-row" data-name="888 (Discontinued)" data-size="100ml" data-price="24000" data-profile="Oriental / Spicy">
@@ -1465,6 +1518,7 @@ body::before{
     <div class="f-nl"><a href="https://comme-des-garcons-parfum.com" target="_blank" rel="noopener" class="f-nm">888 (Discontinued)</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#5A0A00"></span><span class="f-pf">Oriental / Spicy</span><span class="f-mob"> · Grey Market</span></div>
   <div class="f-worn">The artist who sold everything and kept nothing but this.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span><span style="color:#6A1A8A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #6A1A8A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">RARE FIND</span><span style="color:#1A4A2A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #1A4A2A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">GREY MARKET EXCLUSIVE</span></div>
   </div>
   <span class="f-msrp">Grey Market</span>
   <span class="f-inr">—</span>
@@ -1486,9 +1540,10 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="diptyque">
 <div class="b-hd"><span class="b-nm">DIPTYQUE</span><span class="b-cnt">3 SKUS</span></div>
-<div class="f-row" data-name="Do Son" data-size="75ml" data-price="18000" data-profile="Floral">
+<div class="f-row sold-out" data-name="Do Son" data-size="75ml" data-price="18000" data-profile="Floral">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.diptyqueparis.com/en_eu/p/fragrances/eaux-de-parfum/do-son-eau-de-parfum-75ml-1.html" target="_blank" rel="noopener" class="f-nm">Do Son</a></div>
     <div class="f-sub"><span class="f-sz">75ml</span><span class="f-dot" style="background:#6B0A3A"></span><span class="f-pf">Floral</span><span class="f-mob"> · €180</span></div>
@@ -1500,9 +1555,9 @@ body::before{
   <span class="f-inr-mob">₹20,034</span>
   <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
-<div class="f-row" data-name="Eau Capitale" data-size="75ml" data-price="18000" data-profile="Chypre Floral">
+<div class="f-row sold-out" data-name="Eau Capitale" data-size="75ml" data-price="18000" data-profile="Chypre Floral">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.diptyqueparis.com/en_eu/p/fragrances/eaux-de-parfum/eau-capitale-eau-de-parfum-1.html" target="_blank" rel="noopener" class="f-nm">Eau Capitale</a></div>
     <div class="f-sub"><span class="f-sz">75ml</span><span class="f-dot" style="background:#6A0A3A"></span><span class="f-pf">Chypre Floral</span><span class="f-mob"> · €180</span></div>
@@ -1514,9 +1569,9 @@ body::before{
   <span class="f-inr-mob">₹20,034</span>
   <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
-<div class="f-row" data-name="Vetyverio" data-size="75ml" data-price="18000" data-profile="Floral Woody Musk">
+<div class="f-row sold-out" data-name="Vetyverio" data-size="75ml" data-price="18000" data-profile="Floral Woody Musk">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.diptyqueparis.com/en_eu/p/vetyverio-eau-de-parfum-75ml-1.html" target="_blank" rel="noopener" class="f-nm">Vetyverio</a></div>
     <div class="f-sub"><span class="f-sz">75ml</span><span class="f-dot" style="background:#5A0A3A"></span><span class="f-pf">Floral Woody Musk</span><span class="f-mob"> · €180</span></div>
@@ -1528,12 +1583,13 @@ body::before{
   <span class="f-inr-mob">₹20,034</span>
   <span class="f-save">Save ₹2,034</span>
   <span class="f-pr">₹18,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 </div>
+
 <div class="b-sec" data-brand="etat libre d'orange">
 <div class="b-hd"><span class="b-nm">ETAT LIBRE D'ORANGE</span><span class="b-cnt">5 SKUS</span></div>
-<div class="f-row" data-name="Clean Suede" data-size="100ml" data-price="13000" data-profile="Leather">
+<div class="f-row sold-out" data-name="Clean Suede" data-size="100ml" data-price="13000" data-profile="Leather">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.etatlibredorange.com/products/clean-suede" target="_blank" rel="noopener" class="f-nm">Clean Suede</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Leather</span><span class="f-mob"> · €160</span></div>
@@ -1545,9 +1601,9 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
-<div class="f-row" data-name="Fat Electrician" data-size="100ml" data-price="13000" data-profile="Amber Woody">
+<div class="f-row sold-out" data-name="Fat Electrician" data-size="100ml" data-price="13000" data-profile="Amber Woody">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.etatlibredorange.com/products/fat-electrician" target="_blank" rel="noopener" class="f-nm">Fat Electrician</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#6A3A00"></span><span class="f-pf">Amber Woody</span><span class="f-mob"> · €160</span></div>
@@ -1559,9 +1615,9 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
-<div class="f-row" data-name="Rien" data-size="100ml" data-price="13000" data-profile="Amber Woody">
+<div class="f-row sold-out" data-name="Rien" data-size="100ml" data-price="13000" data-profile="Amber Woody">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.etatlibredorange.com/products/rien" target="_blank" rel="noopener" class="f-nm">Rien</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#6A3A00"></span><span class="f-pf">Amber Woody</span><span class="f-mob"> · €160</span></div>
@@ -1573,7 +1629,7 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 <div class="f-row" data-name="Rien Intense Incense" data-size="100ml" data-price="13000" data-profile="Amber Woody">
   <div class="f-main">
@@ -1589,7 +1645,7 @@ body::before{
   <span class="f-pr">₹13,000</span>
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
-<div class="f-row" data-name="The Afternoon Of A Faun" data-size="100ml" data-price="13000" data-profile="Aromatic Spicy">
+<div class="f-row sold-out" data-name="The Afternoon Of A Faun" data-size="100ml" data-price="13000" data-profile="Aromatic Spicy">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.etatlibredorange.com/products/the-afternoon-of-a-faun" target="_blank" rel="noopener" class="f-nm">The Afternoon Of A Faun</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#6A0A00"></span><span class="f-pf">Aromatic Spicy</span><span class="f-mob"> · €160</span></div>
@@ -1601,9 +1657,10 @@ body::before{
   <span class="f-inr-mob">₹17,808</span>
   <span class="f-save">Save ₹4,808</span>
   <span class="f-pr">₹13,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 </div>
+
 <div class="b-sec" data-brand="ex nihilo">
 <div class="b-hd"><span class="b-nm">EX NIHILO</span><span class="b-cnt">1 SKU</span></div>
 <div class="f-row" data-name="Oud Vendome" data-size="100ml" data-price="30300" data-profile="Oud">
@@ -1611,6 +1668,7 @@ body::before{
     <div class="f-nl"><a href="https://us.ex-nihilo-paris.com/products/oud-vendome-eau-de-parfum" target="_blank" rel="noopener" class="f-nm">Oud Vendome</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#0A4A1A"></span><span class="f-pf">Oud</span><span class="f-mob"> · $385</span></div>
   <div class="f-worn">Tips in cash. Always too much.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">$385</span>
   <span class="f-inr">₹36,525</span>
@@ -1621,23 +1679,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
-<div class="b-sec" data-brand="francesca bianchi">
-<div class="b-hd"><span class="b-nm">FRANCESCA BIANCHI</span><span class="b-cnt">1 SKU</span></div>
-<div class="f-row" data-name="Byzantine Amber" data-size="100ml" data-price="20700" data-profile="Amber">
-  <div class="f-main">
-    <div class="f-nl"><a href="https://francescabianchiperfumes.com/product/byzantine-amber/" target="_blank" rel="noopener" class="f-nm">Byzantine Amber</a></div>
-    <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · €249</span></div>
-  <div class="f-worn">The curator who steals one piece from every exhibition.</div>
-  </div>
-  <span class="f-msrp">€249</span>
-  <span class="f-inr">₹27,714</span>
-  
-  <span class="f-inr-mob">₹27,714</span>
-  <span class="f-save">Save ₹7,014</span>
-  <span class="f-pr">₹20,700</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
-</div>
-</div>
+
 <div class="b-sec" data-brand="fragrance du bois">
 <div class="b-hd"><span class="b-nm">FRAGRANCE DU BOIS</span><span class="b-cnt">5 SKUS</span></div>
 <div class="f-row" data-name="Amber Intense" data-size="100ml" data-price="52000" data-profile="Amber">
@@ -1645,6 +1687,7 @@ body::before{
     <div class="f-nl"><a href="https://fragrancedubois.com/products/amber-intense" target="_blank" rel="noopener" class="f-nm">Amber Intense</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · £595</span></div>
   <div class="f-worn">The boardroom smells different when they walk in.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">£595</span>
   <span class="f-inr">₹76,684</span>
@@ -1673,6 +1716,7 @@ body::before{
     <div class="f-nl"><a href="https://fragrancedubois.com/products/oud-noir-intense" target="_blank" rel="noopener" class="f-nm">Oud Noir Intense</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#0A4A1A"></span><span class="f-pf">Oud</span><span class="f-mob"> · £295</span></div>
   <div class="f-worn">The meeting ended. The impression didn't.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">£295</span>
   <span class="f-inr">₹38,020</span>
@@ -1687,6 +1731,7 @@ body::before{
     <div class="f-nl"><a href="https://fragrancedubois.com/products/sahraa-oud" target="_blank" rel="noopener" class="f-nm">Sahraa</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · £695</span></div>
   <div class="f-worn">Left before you woke up.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">£695</span>
   <span class="f-inr">₹89,572</span>
@@ -1701,6 +1746,7 @@ body::before{
     <div class="f-nl"><a href="https://fragrancedubois.com/products/sahraa-oud" target="_blank" rel="noopener" class="f-nm">Sahraa</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · £395</span></div>
   <div class="f-worn">Left before you woke up.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">£395</span>
   <span class="f-inr">₹50,908</span>
@@ -1711,6 +1757,26 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
+<div class="b-sec" data-brand="francesca bianchi">
+<div class="b-hd"><span class="b-nm">FRANCESCA BIANCHI</span><span class="b-cnt">1 SKU</span></div>
+<div class="f-row" data-name="Byzantine Amber" data-size="100ml" data-price="20700" data-profile="Amber">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://francescabianchiperfumes.com/product/byzantine-amber/" target="_blank" rel="noopener" class="f-nm">Byzantine Amber</a></div>
+    <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · €249</span></div>
+  <div class="f-worn">The curator who steals one piece from every exhibition.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span><span style="color:#A8190A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #A8190A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">ALMOST GONE</span></div>
+  </div>
+  <span class="f-msrp">€249</span>
+  <span class="f-inr">₹27,714</span>
+  
+  <span class="f-inr-mob">₹27,714</span>
+  <span class="f-save">Save ₹7,014</span>
+  <span class="f-pr">₹20,700</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+</div>
+
 <div class="b-sec" data-brand="frederic malle">
 <div class="b-hd"><span class="b-nm">FREDERIC MALLE</span><span class="b-cnt">1 SKU</span></div>
 <div class="f-row" data-name="Noir Epices" data-size="100ml" data-price="28500" data-profile="Spicy / Dark">
@@ -1718,6 +1784,7 @@ body::before{
     <div class="f-nl"><a href="https://www.fredericmalle.eu/product/19566/49917/perfume/noir-epices/by-michel-roudnitska#/sku/86657" target="_blank" rel="noopener" class="f-nm">Noir Epices</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#8B1A00"></span><span class="f-pf">Spicy / Dark</span><span class="f-mob"> · €310</span></div>
   <div class="f-worn">The novelist who hasn't written in three years but will.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€310</span>
   <span class="f-inr">₹34,503</span>
@@ -1728,9 +1795,10 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="fugazzi">
 <div class="b-hd"><span class="b-nm">FUGAZZI</span><span class="b-cnt">1 SKU</span></div>
-<div class="f-row" data-name="Parfum 1" data-size="50ml" data-price="11500" data-profile="Spicy Woody">
+<div class="f-row sold-out" data-name="Parfum 1" data-size="50ml" data-price="11500" data-profile="Spicy Woody">
   <div class="f-main">
     <div class="f-nl"><a href="https://fugazzifragrances.com/products/parfum-3" target="_blank" rel="noopener" class="f-nm">Parfum 1</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#3A0A00"></span><span class="f-pf">Spicy Woody</span><span class="f-mob"> · €145</span></div>
@@ -1742,9 +1810,10 @@ body::before{
   <span class="f-inr-mob">₹16,138</span>
   <span class="f-save">Save ₹4,638</span>
   <span class="f-pr">₹11,500</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 </div>
+
 <div class="b-sec" data-brand="initio">
 <div class="b-hd"><span class="b-nm">INITIO</span><span class="b-cnt">5 SKUS</span></div>
 <div class="f-row" data-name="Addictive Vibration" data-size="90ml" data-price="21200" data-profile="Floral">
@@ -1794,6 +1863,7 @@ body::before{
     <div class="f-nl"><a href="https://initioparfums.com/products/oud-for-greatness-neo" target="_blank" rel="noopener" class="f-nm">Oud For Greatness Neo</a></div>
     <div class="f-sub"><span class="f-sz">90ml</span><span class="f-dot" style="background:#6A0A00"></span><span class="f-pf">Aromatic Spicy</span><span class="f-mob"> · €320</span></div>
   <div class="f-worn">Made the shortlist. Didn't get the job. Bought this instead.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€320</span>
   <span class="f-inr">₹35,616</span>
@@ -1818,6 +1888,24 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
+<div class="b-sec" data-brand="les indemodables">
+<div class="b-hd"><span class="b-nm">LES INDEMODABLES</span><span class="b-cnt">1 SKU</span></div>
+<div class="f-row" data-name="Chypre Azural" data-size="50ml" data-price="20500" data-profile="Chypre">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://lesindemodables-parfums.com/en/eau-de-parfum/chypre-azural/order/" target="_blank" rel="noopener" class="f-nm">Chypre Azural</a></div>
+    <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#0A2A3A"></span><span class="f-pf">Chypre</span><span class="f-mob"> · €220</span></div>
+  <div class="f-worn">Timeless. Deliberately so.</div>
+  </div>
+  <span class="f-msrp">€220</span>
+  <span class="f-inr">₹24,486</span>
+  <span class="f-inr-mob">₹24,486</span>
+  <span class="f-save">Save ₹3,986</span>
+  <span class="f-pr">₹20,500</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+</div>
+
 <div class="b-sec" data-brand="les liquides imaginaires">
 <div class="b-hd"><span class="b-nm">LES LIQUIDES IMAGINAIRES</span><span class="b-cnt">2 SKUS</span></div>
 <div class="f-row" data-name="Dom Rosa" data-size="100ml" data-price="20000" data-profile="Fresh / Modern">
@@ -1849,6 +1937,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="maison crivelli">
 <div class="b-hd"><span class="b-nm">MAISON CRIVELLI</span><span class="b-cnt">3 SKUS</span></div>
 <div class="f-row" data-name="Ambre Chromatique" data-size="50ml" data-price="24000" data-profile="Amber">
@@ -1870,6 +1959,7 @@ body::before{
     <div class="f-nl"><a href="https://maisoncrivelli.com/en-asia/products/oud-stallion" target="_blank" rel="noopener" class="f-nm">Oud Stallion</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#0A4A1A"></span><span class="f-pf">Oud</span><span class="f-mob"> · €426</span></div>
   <div class="f-worn">Never raises a voice. Never needs to.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€426</span>
   <span class="f-inr">₹47,414</span>
@@ -1884,6 +1974,7 @@ body::before{
     <div class="f-nl"><a href="https://maisoncrivelli.com/en-asia/products/oud-stallion?variant=55842068857097" target="_blank" rel="noopener" class="f-nm">Oud Stallion</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#0A4A1A"></span><span class="f-pf">Oud</span><span class="f-mob"> · €247</span></div>
   <div class="f-worn">Never raises a voice. Never needs to.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€247</span>
   <span class="f-inr">₹27,491</span>
@@ -1894,6 +1985,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="memo">
 <div class="b-hd"><span class="b-nm">MEMO</span><span class="b-cnt">3 SKUS</span></div>
 <div class="f-row" data-name="African Leather" data-size="200ml" data-price="35000" data-profile="Leather">
@@ -1901,6 +1993,7 @@ body::before{
     <div class="f-nl"><a href="https://www.memoparis.com/products/african-leather-eau-de-parfum?variant=36011841585311" target="_blank" rel="noopener" class="f-nm">African Leather</a></div>
     <div class="f-sub"><span class="f-sz">200ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Leather</span><span class="f-mob"> · €445</span></div>
   <div class="f-worn">One drove the Land Rover. The other read the map wrong.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€445</span>
   <span class="f-inr">₹49,528</span>
@@ -1910,7 +2003,7 @@ body::before{
   <span class="f-pr">₹35,000</span>
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
-<div class="f-row" data-name="Irish Leather" data-size="75ml" data-price="19500" data-profile="Leather">
+<div class="f-row sold-out" data-name="Irish Leather" data-size="75ml" data-price="19500" data-profile="Leather">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.memoparis.com/products/irish-leather-eau-de-parfum" target="_blank" rel="noopener" class="f-nm">Irish Leather</a></div>
     <div class="f-sub"><span class="f-sz">75ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Leather</span><span class="f-mob"> · €255</span></div>
@@ -1922,7 +2015,7 @@ body::before{
   <span class="f-inr-mob">₹28,382</span>
   <span class="f-save">Save ₹8,882</span>
   <span class="f-pr">₹19,500</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 <div class="f-row" data-name="Oriental Leather" data-size="75ml" data-price="19500" data-profile="Leather">
   <div class="f-main">
@@ -1939,9 +2032,27 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
+<div class="b-sec" data-brand="mendittorosa">
+<div class="b-hd"><span class="b-nm">MENDITTOROSA</span><span class="b-cnt">1 SKU</span></div>
+<div class="f-row" data-name="Le Mat" data-size="100ml" data-price="25250" data-profile="Oriental Floral">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.mendittorosa.com/boutique/talismans/talismans-100ml/le-mat/" target="_blank" rel="noopener" class="f-nm">Le Mat</a></div>
+    <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#6A0A3A"></span><span class="f-pf">Oriental Floral</span><span class="f-mob"> · €250</span></div>
+  <div class="f-worn">Ultra Niche · The fool who knew everything first.</div>
+    <div class="f-badges"><span style="color:var(--red);font-weight:700;font-family:var(--fC);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;border:1px solid var(--red);padding:1px 5px;">LIMITED QTY</span><span style="color:#6A1A8A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #6A1A8A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">RARE FIND</span></div>
+  </div>
+  <span class="f-msrp">€250</span>
+  <span class="f-inr">₹27,825</span>
+  <span class="f-inr-mob">₹27,825</span>
+  <span class="f-save">Save ₹2,575</span>
+  <span class="f-pr">₹25,250</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+
 <div class="b-sec" data-brand="mfk">
 <div class="b-hd"><span class="b-nm">MFK</span><span class="b-cnt">2 SKUS</span></div>
-<div class="f-row" data-name="Absolue Pour Le Soir" data-size="70ml" data-price="26000" data-profile="Amber">
+<div class="f-row sold-out" data-name="Absolue Pour Le Soir" data-size="70ml" data-price="26000" data-profile="Amber">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.franciskurkdjian.com/us-en/p/absolue-pour-le-soir-eau-de-parfum-RA120721.html" target="_blank" rel="noopener" class="f-nm">Absolue Pour Le Soir</a></div>
     <div class="f-sub"><span class="f-sz">70ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · $340</span></div>
@@ -1953,13 +2064,14 @@ body::before{
   <span class="f-inr-mob">₹32,256</span>
   <span class="f-save">Save ₹6,256</span>
   <span class="f-pr">₹26,000</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 <div class="f-row" data-name="Gentle Fluidity Gold" data-size="200ml" data-price="42500" data-profile="Amber">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.franciskurkdjian.com/us-en/p/gentle-fluidity-gold-edition---eau-de-parfum-RA122811.html" target="_blank" rel="noopener" class="f-nm">Gentle Fluidity Gold</a></div>
     <div class="f-sub"><span class="f-sz">200ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · $535</span></div>
   <div class="f-worn">Contains multitudes. Will tell you about them.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">$535</span>
   <span class="f-inr">₹50,755</span>
@@ -1970,6 +2082,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="mind games">
 <div class="b-hd"><span class="b-nm">MIND GAMES</span><span class="b-cnt">3 SKUS</span></div>
 <div class="f-row" data-name="Castling" data-size="100ml" data-price="31000" data-profile="Green Floral Woody">
@@ -1977,6 +2090,7 @@ body::before{
     <div class="f-nl"><a href="https://www.mindgamesfragrance.com/products/castling" target="_blank" rel="noopener" class="f-nm">Castling</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#0A3A0A"></span><span class="f-pf">Green Floral Woody</span><span class="f-mob"> · $395</span></div>
   <div class="f-worn">The move no one saw coming. Least of all them.</div>
+    <div class="f-badges"><span style="color:#6A1A8A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #6A1A8A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">RARE FIND</span></div>
   </div>
   <span class="f-msrp">$395</span>
   <span class="f-inr">₹37,474</span>
@@ -1991,6 +2105,7 @@ body::before{
     <div class="f-nl"><a href="https://www.mindgamesfragrance.com/products/double-attack" target="_blank" rel="noopener" class="f-nm">Double Attack</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#0A3A0A"></span><span class="f-pf">Citrus Woody</span><span class="f-mob"> · $395</span></div>
   <div class="f-worn">Wins by the time you realise the game started.</div>
+    <div class="f-badges"><span style="color:#6A1A8A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #6A1A8A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">RARE FIND</span></div>
   </div>
   <span class="f-msrp">$395</span>
   <span class="f-inr">₹37,474</span>
@@ -2005,6 +2120,7 @@ body::before{
     <div class="f-nl"><a href="https://www.mindgamesfragrance.com/products/gambit" target="_blank" rel="noopener" class="f-nm">Gambit</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Woody Leathery</span><span class="f-mob"> · $395</span></div>
   <div class="f-worn">Sacrifices the obvious move to win three turns later.</div>
+    <div class="f-badges"><span style="color:#6A1A8A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #6A1A8A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">RARE FIND</span></div>
   </div>
   <span class="f-msrp">$395</span>
   <span class="f-inr">₹37,474</span>
@@ -2015,6 +2131,65 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
+<div class="b-sec" data-brand="nishane">
+<div class="b-hd"><span class="b-nm">NISHANE</span><span class="b-cnt">4 SKUS</span></div>
+<div class="f-row" data-name="Favonius" data-size="50ml" data-price="20000" data-profile="Woody Chypre">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://nishane.com/product/favonius/" target="_blank" rel="noopener" class="f-nm">Favonius</a></div>
+    <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#0A2A0A"></span><span class="f-pf">Woody Chypre</span><span class="f-mob"> · $280</span></div>
+  <div class="f-worn">Wind that moves things without explaining itself.</div>
+  </div>
+  <span class="f-msrp">$280</span>
+  <span class="f-inr">₹26,564</span>
+  <span class="f-inr-mob">₹26,564</span>
+  <span class="f-save">Save ₹6,564</span>
+  <span class="f-pr">₹20,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="Nanshe" data-size="100ml" data-price="23000" data-profile="Amber Floral">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://nishane.com/product/nanshe/" target="_blank" rel="noopener" class="f-nm">Nanshe</a></div>
+    <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#7A3A00"></span><span class="f-pf">Amber Floral</span><span class="f-mob"> · $375</span></div>
+  <div class="f-worn">Ancient, in the best possible way.</div>
+  </div>
+  <span class="f-msrp">$375</span>
+  <span class="f-inr">₹35,576</span>
+  <span class="f-inr-mob">₹35,576</span>
+  <span class="f-save">Save ₹12,576</span>
+  <span class="f-pr">₹23,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="Pachuli Kozha" data-size="50ml" data-price="16500" data-profile="Leather">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://nishane.com/product/pachuli-kozha/" target="_blank" rel="noopener" class="f-nm">Pachuli Kozha</a></div>
+    <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Leather</span><span class="f-mob"> · $260</span></div>
+  <div class="f-worn">Left the jacket on the chair. Never came back for it.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
+  </div>
+  <span class="f-msrp">$260</span>
+  <span class="f-inr">₹24,666</span>
+  <span class="f-inr-mob">₹24,666</span>
+  <span class="f-save">Save ₹8,166</span>
+  <span class="f-pr">₹16,500</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="Suede Et Safran" data-size="50ml" data-price="17500" data-profile="Leather">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://nishane.com/product/suede-et-safran/" target="_blank" rel="noopener" class="f-nm">Suede Et Safran</a></div>
+    <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Leather</span><span class="f-mob"> · $260</span></div>
+  <div class="f-worn">Negotiation was over before it started.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
+  </div>
+  <span class="f-msrp">$260</span>
+  <span class="f-inr">₹24,666</span>
+  <span class="f-inr-mob">₹24,666</span>
+  <span class="f-save">Save ₹7,166</span>
+  <span class="f-pr">₹17,500</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+</div>
+
 <div class="b-sec" data-brand="papillon">
 <div class="b-hd"><span class="b-nm">PAPILLON</span><span class="b-cnt">1 SKU</span></div>
 <div class="f-row" data-name="Salome" data-size="50ml" data-price="18600" data-profile="Amber">
@@ -2022,6 +2197,7 @@ body::before{
     <div class="f-nl"><a href="https://papillonperfumery.co.uk/product/salome/" target="_blank" rel="noopener" class="f-nm">Salome</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · £145</span></div>
   <div class="f-worn">Seven veils. Six left on the floor.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span><span style="color:#6A1A8A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #6A1A8A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">RARE FIND</span></div>
   </div>
   <span class="f-msrp">£145</span>
   <span class="f-inr">₹18,688</span>
@@ -2029,6 +2205,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="parfums de marly">
 <div class="b-hd"><span class="b-nm">PARFUMS DE MARLY</span><span class="b-cnt">4 SKUS</span></div>
 <div class="f-row" data-name="Layton" data-size="125ml" data-price="27500" data-profile="Amber Floral">
@@ -2036,6 +2213,7 @@ body::before{
     <div class="f-nl"><a href="https://parfums-de-marly.com/products/layton?variant=39896357175447" target="_blank" rel="noopener" class="f-nm">Layton</a></div>
     <div class="f-sub"><span class="f-sz">125ml</span><span class="f-dot" style="background:#7A3A00"></span><span class="f-pf">Amber Floral</span><span class="f-mob"> · €290</span></div>
   <div class="f-worn">Arrives five minutes early. Every time.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€290</span>
   <span class="f-inr">₹32,277</span>
@@ -2050,6 +2228,7 @@ body::before{
     <div class="f-nl"><a href="https://parfums-de-marly.com/products/layton" target="_blank" rel="noopener" class="f-nm">Layton</a></div>
     <div class="f-sub"><span class="f-sz">75ml</span><span class="f-dot" style="background:#7A3A00"></span><span class="f-pf">Amber Floral</span><span class="f-mob"> · €225</span></div>
   <div class="f-worn">Arrives five minutes early. Every time.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€225</span>
   <span class="f-inr">₹25,042</span>
@@ -2064,6 +2243,7 @@ body::before{
     <div class="f-nl"><a href="https://parfums-de-marly.com/products/percival?variant=46898950701379" target="_blank" rel="noopener" class="f-nm">Percival</a></div>
     <div class="f-sub"><span class="f-sz">200ml</span><span class="f-dot" style="background:#002A4A"></span><span class="f-pf">Citrus Aromatic</span><span class="f-mob"> · €390</span></div>
   <div class="f-worn">The quest wasn't for glory. Just needed to know.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€390</span>
   <span class="f-inr">₹43,407</span>
@@ -2088,6 +2268,51 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
+<div class="b-sec" data-brand="penhaligons">
+<div class="b-hd"><span class="b-nm">PENHALIGON'S</span><span class="b-cnt">3 SKUS</span></div>
+<div class="f-row" data-name="The Omniscient Mister Thompson" data-size="75ml" data-price="24500" data-profile="Floral Amber">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.penhaligons.com/uk/en/p/the-omniscient-mr-thompson-eau-de-parfum-75-ml--000000000065171067" target="_blank" rel="noopener" class="f-nm">The Omniscient Mister Thompson</a></div>
+    <div class="f-sub"><span class="f-sz">75ml</span><span class="f-dot" style="background:#7A3A00"></span><span class="f-pf">Floral Amber</span><span class="f-mob"> · £245</span></div>
+  <div class="f-worn">Knows everything. Says just enough.</div>
+  </div>
+  <span class="f-msrp">£245</span>
+  <span class="f-inr">₹31,575</span>
+  <span class="f-inr-mob">₹31,575</span>
+  <span class="f-save">Save ₹7,075</span>
+  <span class="f-pr">₹24,500</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="The Tragedy Of Lord George" data-size="75ml" data-price="24500" data-profile="Oriental">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.penhaligons.com/uk/en/p/the-tragedy-of-lord-george-eau-de-parfum-75-ml--000000000065173406" target="_blank" rel="noopener" class="f-nm">The Tragedy Of Lord George</a></div>
+    <div class="f-sub"><span class="f-sz">75ml</span><span class="f-dot" style="background:#4A1A00"></span><span class="f-pf">Oriental</span><span class="f-mob"> · £245</span></div>
+  <div class="f-worn">Inherited the title. Earned the respect.</div>
+  </div>
+  <span class="f-msrp">£245</span>
+  <span class="f-inr">₹31,575</span>
+  <span class="f-inr-mob">₹31,575</span>
+  <span class="f-save">Save ₹7,075</span>
+  <span class="f-pr">₹24,500</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="The World According To Arthur" data-size="75ml" data-price="24500" data-profile="Oriental Spicy">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.penhaligons.com/uk/en/p/the-world-according-to-arthur-eau-de-parfum-75-ml--000000000065167748" target="_blank" rel="noopener" class="f-nm">The World According To Arthur</a></div>
+    <div class="f-sub"><span class="f-sz">75ml</span><span class="f-dot" style="background:#5A0A00"></span><span class="f-pf">Oriental Spicy</span><span class="f-mob"> · £245</span></div>
+  <div class="f-worn">Has a theory about everything. Usually right.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
+  </div>
+  <span class="f-msrp">£245</span>
+  <span class="f-inr">₹31,575</span>
+  <span class="f-inr-mob">₹31,575</span>
+  <span class="f-save">Save ₹7,075</span>
+  <span class="f-pr">₹24,500</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+</div>
+
 <div class="b-sec" data-brand="perris monte carlo">
 <div class="b-hd"><span class="b-nm">PERRIS MONTE CARLO</span><span class="b-cnt">3 SKUS</span></div>
 <div class="f-row" data-name="Ambre Gris" data-size="100ml" data-price="16000" data-profile="Amber">
@@ -2133,6 +2358,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="ramon monegal">
 <div class="b-hd"><span class="b-nm">RAMON MONEGAL</span><span class="b-cnt">2 SKUS</span></div>
 <div class="f-row" data-name="Soul Of Oud" data-size="100ml" data-price="45000" data-profile="Oud + Amber">
@@ -2140,6 +2366,7 @@ body::before{
     <div class="f-nl"><a href="https://ramonmonegal.com/product/soul-of-oud/" target="_blank" rel="noopener" class="f-nm">Soul Of Oud</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · €495</span></div>
   <div class="f-worn">The last surviving member of a family with too much history.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€495</span>
   <span class="f-inr">₹55,094</span>
@@ -2154,6 +2381,7 @@ body::before{
     <div class="f-nl"><a href="https://ramonmonegal.com/product/soul-of-oud/" target="_blank" rel="noopener" class="f-nm">Soul Of Oud</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · €315</span></div>
   <div class="f-worn">The last surviving member of a family with too much history.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€315</span>
   <span class="f-inr">₹35,060</span>
@@ -2164,6 +2392,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="roja">
 <div class="b-hd"><span class="b-nm">ROJA</span><span class="b-cnt">3 SKUS</span></div>
 <div class="f-row" data-name="Aoud" data-size="50ml" data-price="31800" data-profile="Oud + Amber">
@@ -2171,6 +2400,7 @@ body::before{
     <div class="f-nl"><a href="https://rojalondon.com/products/aoud-50ml" target="_blank" rel="noopener" class="f-nm">Aoud</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · £325</span></div>
   <div class="f-worn">Has opinions about everything. Right about most of it.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">£325</span>
   <span class="f-inr">₹41,886</span>
@@ -2185,6 +2415,7 @@ body::before{
     <div class="f-nl"><a href="https://rojalondon.com/products/aoud-extraordinaire-50" target="_blank" rel="noopener" class="f-nm">Aoud Extraordinaire</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · £325</span></div>
   <div class="f-worn">Extraordinary. Aware of it. Somehow not insufferable.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">£325</span>
   <span class="f-inr">₹41,886</span>
@@ -2209,6 +2440,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="royal crown">
 <div class="b-hd"><span class="b-nm">ROYAL CROWN</span><span class="b-cnt">2 SKUS</span></div>
 <div class="f-row" data-name="Imperator" data-size="100ml" data-price="35000" data-profile="Oriental">
@@ -2216,6 +2448,7 @@ body::before{
     <div class="f-nl"><a href="https://www.royal-crown.it/product/imperator/" target="_blank" rel="noopener" class="f-nm">Imperator</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#4A1A00"></span><span class="f-pf">Oriental</span><span class="f-mob"> · €537</span></div>
   <div class="f-worn">Never asked for the room's attention. Had it anyway.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€537</span>
   <span class="f-inr">₹59,768</span>
@@ -2230,6 +2463,7 @@ body::before{
     <div class="f-nl"><a href="https://www.royal-crown.it/product/rain/" target="_blank" rel="noopener" class="f-nm">Rain</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#0A2A0A"></span><span class="f-pf">Green Spicy Fresh</span><span class="f-mob"> · €455</span></div>
   <div class="f-worn">Arrived before the storm. Left after. Remembered by neither.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€455</span>
   <span class="f-inr">₹50,642</span>
@@ -2240,6 +2474,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="sospiro">
 <div class="b-hd"><span class="b-nm">SOSPIRO</span><span class="b-cnt">1 SKU</span></div>
 <div class="f-row" data-name="Deep Ocean Amber" data-size="100ml" data-price="30500" data-profile="Amber">
@@ -2247,6 +2482,7 @@ body::before{
     <div class="f-nl"><a href="https://sospirointernational.com/products/deep-ocean-amber?_pos=1&_psq=deep&_ss=e&_v=1.0" target="_blank" rel="noopener" class="f-nm">Deep Ocean Amber</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · $362</span></div>
   <div class="f-worn">Retired early. No one knows from what.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">$362</span>
   <span class="f-inr">₹34,343</span>
@@ -2257,6 +2493,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="vilhelm parfumerie">
 <div class="b-hd"><span class="b-nm">VILHELM PARFUMERIE</span><span class="b-cnt">5 SKUS</span></div>
 <div class="f-row" data-name="Back To The Roots" data-size="100ml" data-price="19800" data-profile="Floral Woody Musk">
@@ -2278,6 +2515,7 @@ body::before{
     <div class="f-nl"><a href="https://vilhelmparfumerie.com/products/body-paint" target="_blank" rel="noopener" class="f-nm">Body Paint</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#5A0A3A"></span><span class="f-pf">Chypre Fruity</span><span class="f-mob"> · €250</span></div>
   <div class="f-worn">The canvas isn't on the wall.</div>
+    <div class="f-badges"><span style="color:#A8190A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #A8190A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">ALMOST GONE</span></div>
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
@@ -2292,6 +2530,7 @@ body::before{
     <div class="f-nl"><a href="https://vilhelmparfumerie.com/products/dear-polly" target="_blank" rel="noopener" class="f-nm">Dear Polly</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#0A1A3A"></span><span class="f-pf">Aromatic</span><span class="f-mob"> · €250</span></div>
   <div class="f-worn">A letter that was never sent. For good reason.</div>
+    <div class="f-badges"><span style="color:#A8190A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #A8190A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">ALMOST GONE</span></div>
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
@@ -2306,6 +2545,7 @@ body::before{
     <div class="f-nl"><a href="https://vilhelmparfumerie.com/products/room-service" target="_blank" rel="noopener" class="f-nm">Room Service</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#7A3A00"></span><span class="f-pf">Amber Floral</span><span class="f-mob"> · €250</span></div>
   <div class="f-worn">Ordered everything. Tipped generously. Checked out quietly.</div>
+    <div class="f-badges"><span style="color:#A8190A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #A8190A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">ALMOST GONE</span></div>
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
@@ -2320,6 +2560,7 @@ body::before{
     <div class="f-nl"><a href="https://vilhelmparfumerie.com/products/the-oud-affair" target="_blank" rel="noopener" class="f-nm">The Oud Affair</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#6A3A00"></span><span class="f-pf">Amber Woody</span><span class="f-mob"> · €250</span></div>
   <div class="f-worn">An affair. Obviously.</div>
+    <div class="f-badges"><span style="color:#A8190A;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #A8190A;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">ALMOST GONE</span></div>
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
@@ -2330,6 +2571,7 @@ body::before{
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
+
 <div class="b-sec" data-brand="xerjoff">
 <div class="b-hd"><span class="b-nm">XERJOFF</span><span class="b-cnt">7 SKUS</span></div>
 <div class="f-row" data-name="Al-Khatt" data-size="50ml" data-price="24600" data-profile="Oud + Amber">
@@ -2351,6 +2593,7 @@ body::before{
     <div class="f-nl"><a href="https://www.xerjoff.com/products/alexandria-ll-parfum" target="_blank" rel="noopener" class="f-nm">Alexandria II</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · €545</span></div>
   <div class="f-worn">Inherited the apartment. And the attitude.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€545</span>
   <span class="f-inr">₹60,658</span>
@@ -2365,6 +2608,7 @@ body::before{
     <div class="f-nl"><a href="https://www.xerjoff.com/products/alexandria-ll-parfum?variant=41705016557658" target="_blank" rel="noopener" class="f-nm">Alexandria II</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · €325</span></div>
   <div class="f-worn">Inherited the apartment. And the attitude.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€325</span>
   <span class="f-inr">₹36,172</span>
@@ -2374,7 +2618,7 @@ body::before{
   <span class="f-pr">₹30,000</span>
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
-<div class="f-row" data-name="Alexandria II Travel" data-size="30ml" data-price="18400" data-profile="Oud + Amber">
+<div class="f-row sold-out" data-name="Alexandria II Travel" data-size="30ml" data-price="18400" data-profile="Oud + Amber">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.xerjoff.com/products/alexandria-ll-parfum" target="_blank" rel="noopener" class="f-nm">Alexandria II Travel</a></div>
     <div class="f-sub"><span class="f-sz">30ml</span><span class="f-dot" style="background:#3A0A5A"></span><span class="f-pf">Oud + Amber</span><span class="f-mob"> · €175</span></div>
@@ -2386,13 +2630,14 @@ body::before{
   <span class="f-inr-mob">₹19,478</span>
   <span class="f-save">Save ₹1,078</span>
   <span class="f-pr">₹18,400</span>
-  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+&nbsp;ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+  <span class="sold-out-btn">SOLD OUT</span>
 </div>
 <div class="f-row" data-name="Ether" data-size="50ml" data-price="30500" data-profile="Fresh / Modern">
   <div class="f-main">
     <div class="f-nl"><a href="https://www.xerjoff.com/products/ether-parfum?_pos=1&_sid=a0fc97c6e&_ss=r" target="_blank" rel="noopener" class="f-nm">Ether</a></div>
     <div class="f-sub"><span class="f-sz">50ml</span><span class="f-dot" style="background:#002A5A"></span><span class="f-pf">Fresh / Modern</span><span class="f-mob"> · €360</span></div>
   <div class="f-worn">The physicist who moonlights as a jazz pianist.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;margin-left:6px;white-space:nowrap;vertical-align:middle;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€360</span>
   <span class="f-inr">₹40,068</span>
@@ -2432,11 +2677,12 @@ body::before{
 </div>
 </div>
 </div>
+</div>
   <div class="s-foot">
     <div class="sf-logo egg-t" onclick="eggClick(2)" ontouchend="eggClick(2)" style="user-select:none;">
       <em>Decadent</em> <span>Olfactive™</span>
     </div>
-    <div class="sf-meta">89 SKUs · 29 Brands<br>All prices in INR · May 2026</div>
+    <div class="sf-meta">98 SKUs · 33 Brands<br>All prices in INR · May 2026</div>
   </div>
 </div>
 
@@ -2590,7 +2836,7 @@ document.querySelectorAll('.fb').forEach(btn=>{
     document.querySelectorAll('.fb').forEach(b=>b.classList.remove('fa'));
     btn.classList.add('fa');
     const f=btn.dataset.f;
-    const FM={'oud-amber':['Oud + Amber'],'amber':['Amber','Amber / Woody','Amber Woody','Amber Floral'],'oud':['Oud','Spicy Woody'],'spicy':['Spicy / Dark','Aromatic Spicy'],'woody':['Woody / Aromatic','Woody','Woody Chypre','Oriental Woody','Woody Leathery','Green Floral Woody','Citrus Woody','Woody Aromatic','Chypre','Green Spicy Fresh'],'floral':['Floral','Floral Woody Musk','Oriental Floral','Floral Aldehyde','Chypre Floral','Gourmand Floral','Chypre Fruity','Aromatic','Oriental / Spicy','Oriental','Oriental / Woody'],'fresh':['Fresh / Modern','Citrus Aromatic','Aromatic Fruity'],'leather':['Leather']};
+    const FM={'oud-amber':['Oud + Amber'],'amber':['Amber','Amber / Woody','Amber Woody','Amber Floral'],'oud':['Oud','Spicy Woody'],'spicy':['Spicy / Dark','Aromatic Spicy','Oriental Spicy','Oriental'],'woody':['Woody / Aromatic','Woody','Woody Chypre','Oriental Woody','Woody Leathery','Green Floral Woody','Citrus Woody','Woody Aromatic','Chypre','Green Spicy Fresh'],'floral':['Floral','Floral Woody Musk','Oriental Floral','Floral Aldehyde','Chypre Floral','Gourmand Floral','Chypre Fruity','Aromatic','Oriental / Spicy','Oriental / Woody','Floral Amber'],'fresh':['Fresh / Modern','Citrus Aromatic','Aromatic Fruity'],'leather':['Leather']};
     document.querySelectorAll('.b-sec').forEach(s=>{
       let any=false;
       s.querySelectorAll('.f-row').forEach(r=>{
@@ -2630,6 +2876,94 @@ function eggClick(pg){
 
 
 
+
+
+
+
+
+<script>
+var ytPlayer, ytMuted = true;
+
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('yt-player', {
+    width: '1', height: '1',
+    videoId: 'VJm-vT96Go4',
+    playerVars: {
+      autoplay: 1, mute: 1, loop: 1,
+      playlist: 'VJm-vT96Go4',
+      controls: 0, disablekb: 1,
+      fs: 0, iv_load_policy: 3, modestbranding: 1
+    },
+    events: {
+      onReady: function(e) { e.target.mute(); e.target.playVideo(); }
+    }
+  });
+}
+
+function toggleMusic() {
+  if (!ytPlayer || typeof ytPlayer.mute !== 'function') return;
+  var btn = document.getElementById('music-btn');
+  var lbl = btn.querySelector('.mb-label');
+  if (ytMuted) {
+    ytPlayer.unMute();
+    ytPlayer.playVideo();
+    ytMuted = false;
+    btn.classList.add('playing');
+    lbl.textContent = 'PLAYING';
+    btn.title = 'Mute';
+  } else {
+    ytPlayer.mute();
+    ytMuted = true;
+    btn.classList.remove('playing');
+    lbl.textContent = 'SINATRA';
+    btn.title = 'Play Sinatra';
+  }
+}
+</script>
+
+
+
+<!-- ─── Music Player ─── -->
+<audio id="bg-audio" loop preload="none">
+  <source src="sinatra.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-btn" onclick="toggleMusic()" title="Play Sinatra">
+  <span class="mb-note">♪</span>
+  <span class="mb-label">SINATRA</span>
+  <span class="mb-bars">
+    <span style="height:4px"></span>
+    <span style="height:9px"></span>
+    <span style="height:6px"></span>
+  </span>
+</button>
+
+<script>
+(function(){
+  var audio = document.getElementById('bg-audio');
+  var on = false;
+
+  window.toggleMusic = function(){
+    var btn = document.getElementById('music-btn');
+    var lbl = btn.querySelector('.mb-label');
+    if(!on){
+      audio.play().then(function(){
+        on = true;
+        btn.classList.add('playing');
+        lbl.textContent = 'PLAYING';
+        btn.title = 'Stop music';
+      }).catch(function(e){ console.warn('Audio blocked:',e); });
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      on = false;
+      btn.classList.remove('playing');
+      lbl.textContent = 'SINATRA';
+      btn.title = 'Play Sinatra';
+    }
+  };
+})();
+</script>
 
 </body>
 </html>
