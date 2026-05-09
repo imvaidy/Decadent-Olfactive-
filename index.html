@@ -1140,12 +1140,314 @@ body::before{
   .f-badges{margin-top:5px;gap:4px 5px;}
   .f-badges span{font-size:8px;padding:1px 4px;}
 }
+
+/* ── FRAGRANTICA LINK ── */
+.f-fragrantica{font-family:var(--fC);font-size:7px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);text-decoration:none;border:0.5px solid var(--rule);padding:1px 4px;display:inline-block;vertical-align:middle;flex-shrink:0;transition:all 0.1s;}
+.f-fragrantica:hover,.f-fragrantica:active{color:var(--red);border-color:var(--red);}
+
+/* ── SCENT EVOLUTION ── */
+.evo-toggle{font-family:var(--fC);font-size:7.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);background:transparent;border:none;padding:0;cursor:pointer;margin-top:5px;display:inline-block;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+.evo-toggle.open,.evo-toggle:hover{color:var(--mid);}
+.evo-panel{display:none;padding:9px 0 2px;border-top:1px solid var(--rule);margin-top:6px;}
+.evo-panel.open{display:block;}
+.evo-row{display:flex;align-items:flex-start;gap:6px;margin-bottom:7px;}
+.evo-col{flex-shrink:0;width:64px;}
+.evo-phase{font-family:var(--fC);font-size:7px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);display:block;}
+.evo-time{font-family:var(--fC);font-size:6.5px;letter-spacing:0.06em;color:var(--faint);display:block;margin-top:1px;font-style:italic;}
+.evo-notes{display:flex;flex-wrap:wrap;gap:3px 4px;padding-top:2px;}
+.evo-pill{font-family:var(--fC);font-size:8px;color:var(--mid);border:0.5px solid var(--rule);padding:1px 5px;white-space:nowrap;letter-spacing:0.04em;}
+
+/* ── LAYERING MODAL ── */
+#layer-modal{display:none;position:fixed;inset:0;z-index:500;background:rgba(14,12,10,0.88);align-items:flex-end;justify-content:center;}
+#layer-modal.open{display:flex;}
+.lyr-sheet{background:var(--paper);width:100%;max-width:640px;border-top:3px solid var(--red);max-height:92vh;overflow-y:auto;padding-bottom:max(20px,env(safe-area-inset-bottom,20px));}
+.lyr-hd{background:var(--ink);padding:13px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1;}
+.lyr-hd-t{font-family:var(--fB);font-weight:700;font-style:italic;font-size:18px;color:var(--paper);}
+.lyr-x{font-family:var(--fC);font-size:22px;color:var(--paper);background:transparent;border:none;cursor:pointer;opacity:0.5;padding:0 4px;touch-action:manipulation;}
+.lyr-x:hover{opacity:1;}
+.lyr-body{padding:18px 18px 0;}
+.lyr-note{font-family:var(--fC);font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);font-style:italic;margin-bottom:16px;line-height:1.8;}
+.lyr-selects{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.lyr-lbl{display:block;font-family:var(--fC);font-size:7.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);margin-bottom:5px;}
+.lyr-sel{width:100%;font-family:var(--fC);font-size:11px;letter-spacing:0.04em;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 10px;-webkit-appearance:none;appearance:none;cursor:pointer;box-sizing:border-box;}
+.lyr-go{width:100%;font-family:var(--fB);font-weight:700;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:none;padding:15px;cursor:pointer;touch-action:manipulation;margin-bottom:16px;}
+.lyr-result{display:none;border-top:2px solid var(--ink);padding:16px 0 20px;}
+.lyr-result.show{display:block;}
+.lyr-pair{font-family:var(--fB);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;}
+.lyr-score{font-family:var(--fC);font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.lyr-stars{font-size:16px;letter-spacing:3px;}
+.lyr-score.s4,.lyr-score.s5{color:#1A5A1A;}.lyr-score.s3{color:#7A5A00;}.lyr-score.s2,.lyr-score.s1{color:var(--red);}
+.lyr-verdict{font-family:var(--fC);font-size:11px;line-height:1.7;color:var(--mid);font-style:italic;letter-spacing:0.05em;margin-bottom:12px;}
+.lyr-seq{background:var(--paper2);border-left:2px solid var(--ink);padding:10px 14px;}
+.lyr-seq-lbl{font-family:var(--fC);font-size:7.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);margin-bottom:5px;}
+.lyr-seq-txt{font-family:var(--fC);font-size:11px;color:var(--ink);letter-spacing:0.05em;line-height:1.7;}
+@media(max-width:600px){.lyr-selects{grid-template-columns:1fr;}}
+
+/* ── CHECKOUT MODAL ── */
+#checkout-modal{display:none;position:fixed;inset:0;z-index:600;background:rgba(14,12,10,0.93);align-items:flex-end;justify-content:center;}
+#checkout-modal.open{display:flex;}
+.co-sheet{background:var(--paper);width:100%;max-width:560px;border-top:3px solid var(--red);max-height:96vh;overflow-y:auto;padding-bottom:max(24px,env(safe-area-inset-bottom,24px));}
+.co-hd{background:var(--ink);padding:13px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1;border-bottom:1px solid var(--red);}
+.co-hd-t{font-family:var(--fB);font-weight:700;font-style:italic;font-size:18px;color:var(--paper);}
+.co-x{font-family:var(--fC);font-size:22px;color:var(--paper);background:transparent;border:none;cursor:pointer;opacity:0.5;padding:0 4px;touch-action:manipulation;}
+.co-x:hover{opacity:1;}
+.co-body{padding:18px;}
+.co-sum{background:var(--paper2);border:1px solid var(--rule);padding:12px 14px;margin-bottom:16px;}
+.co-sum-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--fC);font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);padding:3px 0;}
+.co-sum-row.tot{font-family:var(--fB);font-size:22px;color:var(--ink);border-top:1px solid var(--rule);padding-top:9px;margin-top:5px;letter-spacing:0;}
+.co-lbl{font-family:var(--fC);font-size:7.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);margin-bottom:5px;margin-top:12px;display:block;}
+.co-inp{width:100%;font-family:var(--fB);font-size:16px;letter-spacing:0.04em;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:11px 13px;margin-bottom:8px;box-sizing:border-box;}
+.co-inp::placeholder{color:var(--faint);font-family:var(--fC);font-size:12px;font-style:italic;}
+.co-oid{font-family:var(--fC);font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);padding:8px 0;text-align:center;}
+.co-err{font-family:var(--fC);font-size:10px;color:var(--red);letter-spacing:0.08em;margin-bottom:8px;display:none;}
+.co-err.show{display:block;}
+.co-wa{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:#25D366;color:#fff;border:none;font-family:var(--fB);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;padding:16px;cursor:pointer;touch-action:manipulation;text-decoration:none;transition:opacity 0.1s;}
+.co-wa:hover{opacity:0.9;}
+.co-note{font-family:var(--fC);font-size:8px;letter-spacing:0.08em;color:var(--faint);text-align:center;margin-top:10px;font-style:italic;line-height:1.9;}
+
+/* ── PLACE ORDER SECTION IN P3 ── */
+.order-section{display:none;}
+.o-form{padding:14px 14px 0;}
+.o-form-lbl{font-family:var(--fC);font-size:7.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;display:block;}
+.o-form-inp{width:100%;font-family:var(--fB);font-size:15px;letter-spacing:0.04em;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:10px 13px;margin-bottom:7px;box-sizing:border-box;}
+.o-form-inp::placeholder{color:var(--faint);font-family:var(--fC);font-size:11px;font-style:italic;}
+.order-btn{width:100%;font-family:var(--fB);font-weight:700;font-size:clamp(13px,3.5vw,17px);letter-spacing:0.22em;text-transform:uppercase;background:var(--red);color:#fff;border:none;padding:19px 14px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:background 0.1s;}
+.order-btn:active{background:#8A1006;}
+.order-clr{width:100%;font-family:var(--fC);font-size:8px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);background:transparent;border:none;border-top:1px solid rgba(255,255,255,0.1);padding:12px;cursor:pointer;touch-action:manipulation;background:var(--ink);}
+.order-clr:active{color:var(--paper);}
+
+/* ── TOOLS STRIP ── */
+.s-tools{display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;background:rgba(14,12,10,0.95);border-bottom:1px solid rgba(255,255,255,0.06);}
+.s-tools::-webkit-scrollbar{display:none;}
+.s-tool{font-family:var(--fC);font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);background:transparent;border:none;border-right:1px solid rgba(255,255,255,0.07);padding:9px 13px;cursor:pointer;white-space:nowrap;flex-shrink:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;text-decoration:none;display:inline-block;}
+.s-tool:hover,.s-tool:active{color:var(--paper);}
+
+
+/* ── QUIZ LANDING CTA (p1) ── */
+.fp-quiz-btn{width:100%;background:transparent;border:1px solid var(--rule);color:var(--mid);font-family:var(--fC);font-size:clamp(11px,2.8vw,14px);font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:14px 18px;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;display:flex;justify-content:space-between;align-items:center;margin-top:6px;transition:all 0.15s;}
+.fp-quiz-btn:hover,.fp-quiz-btn:active{border-color:var(--ink);color:var(--ink);background:var(--paper2);}
+
+/* ── ORDER FORM ERROR (inline in p3) ── */
+.o-form-err{font-family:var(--fC);font-size:10px;color:var(--red);letter-spacing:0.08em;padding:8px 0 2px;display:none;}
+.o-form-err.show{display:block;}
+
+/* ── QUIZ SPA PAGE (p4) ── */
+#p4{display:none;background:var(--paper);min-height:100vh;min-height:100svh;}
+.qz-nav{background:var(--ink);border-bottom:2px solid var(--red);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50;}
+.qz-nav-back{font-family:var(--fC);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);background:transparent;border:none;cursor:pointer;padding:0;touch-action:manipulation;}
+.qz-nav-back:hover{color:#fff;}
+.qz-nav-brand{font-family:var(--fC);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+.qz-nav-count{font-family:var(--fC);font-size:9px;letter-spacing:0.12em;color:rgba(255,255,255,0.35);}
+.qz-prog{height:2px;background:var(--paper2);}
+.qz-prog-bar{height:100%;background:var(--red);transition:width 0.4s ease;}
+.qz-wrap{max-width:560px;margin:0 auto;padding:0;}
+.qz-card{min-height:calc(100svh - 58px);display:flex;flex-direction:column;padding:36px 24px 28px;}
+.qz-card-top{flex:1;display:flex;flex-direction:column;justify-content:center;}
+.qz-num{font-family:var(--fC);font-size:8.5px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--mid);margin-bottom:24px;}
+.qz-stmt{font-family:'Lora',serif;font-size:clamp(22px,5.5vw,34px);line-height:1.22;color:var(--ink);font-weight:600;font-style:italic;letter-spacing:-0.01em;}
+.qz-stmt em{color:var(--red);font-style:normal;}
+.qz-sub{font-family:var(--fC);font-size:10px;color:var(--faint);letter-spacing:0.06em;line-height:1.75;margin-top:14px;font-style:italic;}
+.qz-rule{border:none;border-top:1px solid var(--rule);margin:28px 0;}
+.qz-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.qz-btn{font-family:var(--fC);font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:18px 14px;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:all 0.1s;}
+.qz-btn.qz-yes:hover,.qz-btn.qz-yes:active{background:var(--ink);color:var(--paper);}
+.qz-btn.qz-no:hover,.qz-btn.qz-no:active{background:var(--paper2);}
+/* Result */
+.qz-result{display:none;padding:36px 24px max(36px,env(safe-area-inset-bottom,36px));max-width:560px;margin:0 auto;}
+.qz-result-rule{border:none;border-top:4px double var(--ink);margin-bottom:28px;}
+.qz-persona-lbl{font-family:var(--fC);font-size:8.5px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--mid);margin-bottom:12px;}
+.qz-persona-name{font-family:'Lora',serif;font-size:clamp(30px,7.5vw,50px);font-weight:700;line-height:0.95;color:var(--ink);letter-spacing:-0.02em;margin-bottom:20px;}
+.qz-persona-desc{font-family:'Lora',serif;font-style:italic;font-size:clamp(13px,3.2vw,16px);line-height:1.65;color:var(--ink);margin-bottom:24px;border-left:2px solid var(--red);padding-left:16px;}
+.qz-matches-lbl{font-family:var(--fC);font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:14px;padding-top:18px;border-top:1px solid var(--rule);}
+.qz-match{border-bottom:1px solid var(--rule);padding:12px 0;}
+.qz-match-name{font-family:'Lora',serif;font-weight:700;font-size:17px;color:var(--ink);margin-bottom:2px;}
+.qz-match-brand{font-family:var(--fC);font-size:8.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);}
+.qz-match-why{font-family:var(--fC);font-size:10px;color:var(--faint);font-style:italic;margin-top:5px;line-height:1.7;}
+.qz-cta{margin-top:24px;display:flex;flex-direction:column;gap:8px;}
+.qz-cta-main{font-family:var(--fC);font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:none;padding:17px;cursor:pointer;text-align:center;touch-action:manipulation;transition:background 0.1s;}
+.qz-cta-main:hover{background:var(--mid);}
+.qz-cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;border:none;font-family:var(--fC);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:14px;cursor:pointer;text-decoration:none;touch-action:manipulation;}
+.qz-cta-again{font-family:var(--fC);font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;background:transparent;color:var(--mid);border:1px solid var(--rule);padding:12px;cursor:pointer;touch-action:manipulation;}
+.qz-cta-again:hover{border-color:var(--ink);color:var(--ink);}
+@media(max-width:500px){
+  .qz-card{padding:24px 18px 20px;}
+  .qz-result{padding:28px 18px max(28px,env(safe-area-inset-bottom,28px));}
+  .qz-btn{padding:16px 10px;font-size:11px;}
+}
+
+
+/* ── CHECKOUT NEXT STEPS ── */
+.co-next{background:var(--paper2);border:1px solid var(--rule);padding:14px 16px;margin-bottom:16px;}
+.co-next-lbl{font-family:var(--fC);font-size:7.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;}
+.co-next-step{display:flex;gap:12px;align-items:flex-start;margin-bottom:8px;}
+.co-next-step:last-child{margin-bottom:0;}
+.co-next-n{font-family:var(--fC);font-size:8px;font-weight:700;letter-spacing:0.1em;color:var(--red);flex-shrink:0;padding-top:1px;min-width:18px;}
+.co-next-step span:last-child{font-family:var(--fC);font-size:10.5px;color:var(--mid);line-height:1.6;letter-spacing:0.04em;}
+
+
+/* ══════════════════════════════════════════════════
+   MOBILE OPTIMISATION PASS
+   ══════════════════════════════════════════════════ */
+
+/* Prevent iOS input zoom — all inputs must be ≥16px */
+input, select, textarea {
+  font-size: max(16px, 1em) !important;
+}
+
+/* ── CATALOGUE CARDS (p2) — tighter on narrow screens ── */
+@media(max-width:420px){
+  .f-row{
+    grid-template-columns: 1fr auto;
+    gap: 6px 8px;
+    padding: 10px 12px;
+  }
+  .f-nm{font-size:13px;}
+  .f-pf{display:none;} /* profile hidden on very small — shown in worn */
+  .f-inr{font-size:9px;}
+  .f-save{font-size:8px;}
+  .f-pr{font-size:18px;}
+  .add-btn{min-height:44px;min-width:44px;}
+  .ab-label{font-size:10px;letter-spacing:0.1em;}
+  .f-worn{font-size:10px;}
+}
+
+/* ── MODALS — full-height safe on all iPhones ── */
+.lyr-sheet,
+.co-sheet,
+.btch-sheet{
+  padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+}
+
+/* Layering selects — larger touch target on mobile */
+@media(max-width:600px){
+  .lyr-sel{
+    font-size:16px; /* prevent iOS zoom */
+    padding:12px 10px;
+    min-height:48px;
+  }
+  .lyr-go{
+    padding:18px;
+    font-size:14px;
+    min-height:54px;
+  }
+  .lyr-selects{grid-template-columns:1fr;}
+}
+
+/* ── CHECKOUT (p3 form) — prevent iOS zoom ── */
+.o-form-inp{
+  font-size:16px !important;
+}
+.co-inp{
+  font-size:16px !important;
+}
+
+/* PLACE ORDER button — full width, fat tap target */
+.order-btn{
+  min-height:56px;
+}
+
+/* WhatsApp confirm button */
+.co-wa{
+  min-height:54px;
+  padding: 18px 14px;
+}
+
+/* ── QUIZ (p4) — comfortable on 375px ── */
+@media(max-width:400px){
+  .qz-stmt{font-size:20px;}
+  .qz-btn{
+    padding:16px 10px;
+    font-size:11px;
+    min-height:52px;
+  }
+  .qz-persona-name{font-size:28px;}
+  .qz-card{padding:20px 16px 16px;}
+  .qz-result{padding:24px 16px 32px;}
+}
+
+/* ── BASKET (p3) ── */
+@media(max-width:420px){
+  .b-nav-back, .b-nav-t{font-size:11px;}
+  .b-ip{font-size:14px;}
+  .b-iname{font-size:13px;}
+  .b-rm{min-width:36px;min-height:44px;font-size:20px;}
+  .o-form-inp{padding:12px 13px;}
+}
+
+/* ── TOOLS STRIP — scrolls, no wrap, thumb-sized ── */
+.s-tool{
+  min-height:40px;
+  padding:10px 14px;
+  display:inline-flex;
+  align-items:center;
+}
+
+/* ── FILTER / SORT BAR — scroll without momentum stutter ── */
+.fbar, .sbar{
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── FAB basket button ── */
+#fab{
+  bottom: max(20px, env(safe-area-inset-bottom, 20px));
+  right: 16px;
+}
+
+/* ── P0 INTRO — better on small screens ── */
+@media(max-width:380px){
+  .intro-name{font-size:22px;}
+  .intro-cta-btn{font-size:12px;padding:15px 16px;}
+}
+
+/* ── P1 LANDING — quiz button readable on 375px ── */
+@media(max-width:400px){
+  .fp-quiz-btn{font-size:11px;padding:13px 14px;}
+  .fp-enter-btn{font-size:13px;}
+}
+
+/* ── DISPATCH (p1b) — tabs scroll on narrow ── */
+.od-tabs{
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  flex-wrap:nowrap;
+}
+.od-tabs::-webkit-scrollbar{display:none;}
+.od-tab{flex-shrink:0;}
+
+/* ── S-NAV sticky bar — full coverage ── */
+.s-nav{
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.s-tools{
+  position:sticky;
+  top: 48px; /* below s-nav */
+  z-index:39;
+}
+
+/* ── CHECKOUT MODAL — slides up fully on short phones ── */
+@media(max-height:700px){
+  .co-sheet{
+    max-height:98vh;
+    max-height:98svh;
+  }
+  .co-next{padding:10px 12px;}
+  .co-next-step{margin-bottom:5px;}
+}
+
+/* ── Layer result auto-scroll on mobile ── */
+.lyr-result.show{
+  scroll-margin-top:16px;
+}
+
 </style>
 </head>
 <body>
 
 <!-- MARQUEE -->
-<div class="mq"><div class="mq-t"><span class="mq-i">DECADENT OLFACTIVE™  ·  128 FRAGRANCES  ·  35 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  DECADENT OLFACTIVE™  ·  128 FRAGRANCES  ·  35 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  </span><span class="mq-i" aria-hidden="true">DECADENT OLFACTIVE™  ·  128 FRAGRANCES  ·  35 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  DECADENT OLFACTIVE™  ·  128 FRAGRANCES  ·  35 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  </span></div></div>
+<div class="mq"><div class="mq-t"><span class="mq-i">DECADENT OLFACTIVE™  ·  141 FRAGRANCES  ·  40 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  DECADENT OLFACTIVE™  ·  141 FRAGRANCES  ·  40 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  </span><span class="mq-i" aria-hidden="true">DECADENT OLFACTIVE™  ·  141 FRAGRANCES  ·  40 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  DECADENT OLFACTIVE™  ·  141 FRAGRANCES  ·  40 HOUSES  ·  FREE SHIPPING  ·  CHENNAI INDIA  ·  MAY 2026  ·  3–5 BUSINESS DAYS  ·  NICHE &amp; LUXURY  ·  WHILE STOCKS LAST  ·  </span></div></div>
 
 <!-- ═══ PAGE 1 ═══ -->
 <!-- ═══ PAGE 0 — INTRO ═══ -->
@@ -1228,7 +1530,7 @@ body::before{
 <div id="p1">
   <div class="fp-mast">
     <div class="fp-mast-top">
-      <button onclick="goIntro()" style="background:none;border:none;font-family:var(--fC);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);cursor:pointer;padding:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;">← Intro</button>
+      <button onclick="goDispatch()" style="background:none;border:none;font-family:var(--fC);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);cursor:pointer;padding:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;">← News</button>
       <span>Chennai, India · Established 2026</span>
       <span class="fp-mast-dateline">Vol. II, No. 05 · May 2026</span>
       <span>Niche &amp; Luxury Fragrance</span>
@@ -1242,7 +1544,7 @@ body::before{
   </div>
 
   <div class="fp-banner">
-    <div class="fp-banner-txt">May 2026 Stock Catalogue · 128 Curated Fragrances · 35 Houses</div>
+    <div class="fp-banner-txt">May 2026 Stock Catalogue · 128 Curated Fragrances · 39 Houses</div>
   </div>
 
   <div class="fp-body">
@@ -1257,7 +1559,7 @@ body::before{
     <div class="fp-datatable">
       <div class="fp-dt-cell">
         <span class="fp-dt-label">Total SKUs</span>
-        <span class="fp-dt-val r">128</span>
+        <span class="fp-dt-val r">141</span>
       </div>
       <div class="fp-dt-cell">
         <span class="fp-dt-label">Houses</span>
@@ -1295,7 +1597,10 @@ body::before{
       <span>View Stock List</span>
       <span class="fp-enter-arrow">→</span>
     </button>
-
+    <button class="fp-quiz-btn" onclick="goQuiz()">
+      <span>✦ &nbsp;Discover Your Scent Persona</span>
+      <span>→</span>
+    </button>
   </div>
 
   <div class="fp-strip">
@@ -1350,7 +1655,7 @@ body::before{
     <button class="od-enter-btn" onclick="goLanding()">
       VIEW STOCK LIST &nbsp;→
     </button>
-    <p class="od-enter-sub">128 SKUs · 35 Houses · Free Shipping · Chennai</p>
+    <p class="od-enter-sub">128 SKUs · 39 Houses · Free Shipping · Chennai</p>
   </div>
 </div>
 
@@ -1361,6 +1666,10 @@ body::before{
     <button class="s-nav-back" onclick="goLanding()">← Back</button>
     <span class="s-nav-title">Decadent Olfactive™ · May 2026</span>
     <button class="s-nav-bkt" onclick="goBasket()">Basket&nbsp;(<span id="navC">0</span>)</button>
+  </div>
+  <div class="s-tools">
+    <button class="s-tool" onclick="openLayer()">⚗ LAYER WORKSHOP</button>
+    <button class="s-tool" onclick="goQuiz()">✦ SCENT QUIZ</button>
   </div>
   <div class="mh">
     <div class="mh-name">Decadent <span class="sub">Olfactive™</span></div>
@@ -1701,6 +2010,66 @@ body::before{
 </div>
 </div>
 
+<div class="b-sec" data-brand="boadicea the victorious">
+<div class="b-hd"><span class="b-nm">BOADICEA THE VICTORIOUS</span><span class="b-cnt">4 SKUS</span></div>
+<div class="f-row" data-name="Energizer" data-size="100ml" data-price="27000" data-profile="Citrus">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://boadiceaperfume.com/products/energizer?_pos=1&_psq=ener&_ss=e&_v=1.0" target="_blank" rel="noopener" class="f-nm">Energizer</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#4A5A00"></span><span class="f-pf">Citrus</span><span class="f-mob"> · £225</span></div>
+    <div class="f-worn">The morning meeting you were actually awake for.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
+  </div>
+  <span class="f-msrp">£225</span>
+  <span class="f-inr">₹28,998</span>
+  <span class="f-inr-mob">₹28,998</span>
+  <span class="f-save">Save ₹1,998</span>
+  <span class="f-pr">₹27,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="Bodacious" data-size="100ml" data-price="30000" data-profile="Amber Vanilla">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://boadiceaperfume.com/products/bodacious?_pos=1&_sid=205e251ac&_ss=r" target="_blank" rel="noopener" class="f-nm">Bodacious</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#7A4A00"></span><span class="f-pf">Amber Vanilla</span><span class="f-mob"> · £295</span></div>
+    <div class="f-worn">Audacious. Obviously.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
+  </div>
+  <span class="f-msrp">£295</span>
+  <span class="f-inr">₹38,020</span>
+  <span class="f-inr-mob">₹38,020</span>
+  <span class="f-save">Save ₹8,020</span>
+  <span class="f-pr">₹30,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="Consort" data-size="100ml" data-price="35600" data-profile="Chypre Floral">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://boadiceaperfume.com/products/consort?_pos=1&_sid=cef3986c0&_ss=r" target="_blank" rel="noopener" class="f-nm">Consort</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#2A4A2A"></span><span class="f-pf">Chypre Floral</span><span class="f-mob"> · £370</span></div>
+    <div class="f-worn">Arrives quietly. Stays long after you have left.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
+  </div>
+  <span class="f-msrp">£370</span>
+  <span class="f-inr">₹47,686</span>
+  <span class="f-inr-mob">₹47,686</span>
+  <span class="f-save">Save ₹12,086</span>
+  <span class="f-pr">₹35,600</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="Enthrone" data-size="100ml" data-price="33600" data-profile="Oriental">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://boadiceaperfume.com/products/enthrone?_pos=1&_psq=enth&_ss=e&_v=1.0" target="_blank" rel="noopener" class="f-nm">Enthrone</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#4A1A1A"></span><span class="f-pf">Oriental</span><span class="f-mob"> · £295</span></div>
+    <div class="f-worn">Power dressed as warmth.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
+  </div>
+  <span class="f-msrp">£295</span>
+  <span class="f-inr">₹38,020</span>
+  <span class="f-inr-mob">₹38,020</span>
+  <span class="f-save">Save ₹4,420</span>
+  <span class="f-pr">₹33,600</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+</div>
+
 <div class="b-sec" data-brand="bois 1920">
 <div class="b-hd"><span class="b-nm">BOIS 1920</span><span class="b-cnt">3 SKUS</span></div>
 <div class="f-row sold-out" data-name="Cannabis Dolce" data-size="100ml" data-price="14500" data-profile="Oriental">
@@ -1744,6 +2113,52 @@ body::before{
   <span class="f-save">Save ₹3,864</span>
   <span class="f-pr">₹14,500</span>
   <span class="sold-out-btn">SOLD OUT</span>
+</div>
+</div>
+
+<div class="b-sec" data-brand="bon parfumeur">
+<div class="b-hd"><span class="b-nm">BON PARFUMEUR</span><span class="b-cnt">3 SKUS</span></div>
+<div class="f-row" data-name="602" data-size="100ml" data-price="13000" data-profile="Fresh / Modern">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.bonparfumeur.com/products/602-pepper-cedar-patchouli?_pos=1&_psq=602&_ss=e&_v=1.0" target="_blank" rel="noopener" class="f-nm">602</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#003A5A"></span><span class="f-pf">Fresh / Modern</span><span class="f-mob"> · €125</span></div>
+    <div class="f-worn">Pepper, structure, intention.</div>
+    
+  </div>
+  <span class="f-msrp">€125</span>
+  <span class="f-inr">₹13,913</span>
+  <span class="f-inr-mob">₹13,913</span>
+  <span class="f-save">Save ₹913</span>
+  <span class="f-pr">₹13,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="701" data-size="100ml" data-price="12000" data-profile="Fresh / Modern">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.bonparfumeur.com/products/701-eucalyptus-coriander-cypress?_pos=1&_psq=701&_ss=e&_v=1.0" target="_blank" rel="noopener" class="f-nm">701</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#003A5A"></span><span class="f-pf">Fresh / Modern</span><span class="f-mob"> · €115</span></div>
+    <div class="f-worn">A cold morning, done precisely right.</div>
+    
+  </div>
+  <span class="f-msrp">€115</span>
+  <span class="f-inr">₹12,800</span>
+  <span class="f-inr-mob">₹12,800</span>
+  <span class="f-save">Save ₹800</span>
+  <span class="f-pr">₹12,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="401" data-size="100ml" data-price="13000" data-profile="Oriental Woody">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.bonparfumeur.com/products/401-cedar-candied-plum-vanilla?_pos=2&_psq=401&_ss=e&_v=1.0" target="_blank" rel="noopener" class="f-nm">401</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#2A1A08"></span><span class="f-pf">Oriental Woody</span><span class="f-mob"> · €125</span></div>
+    <div class="f-worn">Cedar walks into a patisserie. Orders the plum.</div>
+    
+  </div>
+  <span class="f-msrp">€125</span>
+  <span class="f-inr">₹13,913</span>
+  <span class="f-inr-mob">₹13,913</span>
+  <span class="f-save">Save ₹913</span>
+  <span class="f-pr">₹13,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 
@@ -2034,6 +2449,40 @@ body::before{
 </div>
 </div>
 
+<div class="b-sec" data-brand="electimuss">
+<div class="b-hd"><span class="b-nm">ELECTIMUSS</span><span class="b-cnt">2 SKUS</span></div>
+<div class="f-row" data-name="Mercurial Cashmere" data-size="100ml" data-price="29000" data-profile="Floral Woody Musk">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.electimuss.com/products/mercurial-cashmere?_pos=1&_psq=Mercurial+Cashmere&_ss=e&_v=1.0" target="_blank" rel="noopener" class="f-nm">Mercurial Cashmere</a></div>
+    <div class="f-sub"><span class="f-sz">100ml Extrait</span><span class="f-dot" style="background:#4A3A5A"></span><span class="f-pf">Floral Woody Musk</span><span class="f-mob"> · $330</span></div>
+    <div class="f-worn">Cashmere that earns its thread count.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
+    
+  </div>
+  <span class="f-msrp">$330</span>
+  <span class="f-inr">₹31,307</span>
+  <span class="f-inr-mob">₹31,307</span>
+  <span class="f-save">Save ₹2,307</span>
+  <span class="f-pr">₹29,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="Vixere" data-size="100ml" data-price="29000" data-profile="Floral Amber">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.electimuss.com/products/vixere?_pos=1&_psq=Vixere&_ss=e&_v=1.0" target="_blank" rel="noopener" class="f-nm">Vixere</a></div>
+    <div class="f-sub"><span class="f-sz">100ml Extrait</span><span class="f-dot" style="background:#7A4A3A"></span><span class="f-pf">Floral Amber</span><span class="f-mob"> · $330</span></div>
+    <div class="f-worn">Dense. Radiant. Discovered only in proximity.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
+    
+  </div>
+  <span class="f-msrp">$330</span>
+  <span class="f-inr">₹31,307</span>
+  <span class="f-inr-mob">₹31,307</span>
+  <span class="f-save">Save ₹2,307</span>
+  <span class="f-pr">₹29,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+</div>
+
 <div class="b-sec" data-brand="etat libre d'orange">
 <div class="b-hd"><span class="b-nm">ETAT LIBRE D'ORANGE</span><span class="b-cnt">5 SKUS</span></div>
 <div class="f-row sold-out" data-name="Clean Suede" data-size="100ml" data-price="13000" data-profile="Leather">
@@ -2041,6 +2490,7 @@ body::before{
     <div class="f-nl"><a href="https://www.etatlibredorange.com/products/clean-suede" target="_blank" rel="noopener" class="f-nm">Clean Suede</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#3A1A0A"></span><span class="f-pf">Leather</span><span class="f-mob"> · €160</span></div>
   <div class="f-worn">The jacket that closes every deal.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€160</span>
   <span class="f-inr">₹17,808</span>
@@ -2712,7 +3162,7 @@ body::before{
 </div>
 
 <div class="b-sec" data-brand="parfums de marly">
-<div class="b-hd"><span class="b-nm">PARFUMS DE MARLY</span><span class="b-cnt">4 SKUS</span></div>
+<div class="b-hd"><span class="b-nm">PARFUMS DE MARLY</span><span class="b-cnt">5 SKUS</span></div>
 <div class="f-row" data-name="Layton" data-size="125ml" data-price="27500" data-profile="Amber Floral">
   <div class="f-main">
     <div class="f-nl"><a href="https://parfums-de-marly.com/products/layton?variant=39896357175447" target="_blank" rel="noopener" class="f-nm">Layton</a></div>
@@ -2771,6 +3221,21 @@ body::before{
   <span class="f-save">Save ₹5,042</span>
   <span class="f-pr">₹20,000</span>
   <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+
+<div class="f-row" data-name="Delina" data-size="30ml" data-price="20000" data-profile="Floral">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://parfums-de-marly.com/products/delina-exclusif-30ml?variant=46968381407555" target="_blank" rel="noopener" class="f-nm">Delina</a></div>
+    <div class="f-sub"><span class="f-sz">30ml Parfum</span><span class="f-dot" style="background:#7A1A3A"></span><span class="f-pf">Floral</span><span class="f-mob"> · €190</span></div>
+    <div class="f-worn">The cult version. Less accessible, more honest.</div>
+    
+  </div>
+  <span class="f-msrp">€190</span>
+  <span class="f-inr">₹21,147</span>
+  <span class="f-inr-mob">₹21,147</span>
+  <span class="f-save">Save ₹1,147</span>
+  <span class="f-pr">₹20,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 
@@ -2863,6 +3328,24 @@ body::before{
   <span class="f-save">Save ₹13,720</span>
   <span class="f-pr">₹18,000</span>
   <span class="sold-out-btn">SOLD OUT</span>
+</div>
+</div>
+
+<div class="b-sec" data-brand="prada olfactories">
+<div class="b-hd"><span class="b-nm">PRADA OLFACTORIES</span><span class="b-cnt">1 SKU</span></div>
+<div class="f-row" data-name="Dark Light" data-size="100ml" data-price="28000" data-profile="Amber">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://www.prada.com/eu/en/p/olfactories-les-mirages-dark-light-edp-100-ml/1A1326_2HCD_F0Z99_P_ML100" target="_blank" rel="noopener" class="f-nm">Dark Light</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#7A3A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · €345</span></div>
+    <div class="f-worn">Light captured, then slowed down.</div>
+    
+  </div>
+  <span class="f-msrp">€345</span>
+  <span class="f-inr">₹38,399</span>
+  <span class="f-inr-mob">₹38,399</span>
+  <span class="f-save">Save ₹10,399</span>
+  <span class="f-pr">₹28,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
 </div>
 </div>
 
@@ -3001,6 +3484,40 @@ body::before{
 </div>
 </div>
 
+<div class="b-sec" data-brand="strangelove">
+<div class="b-hd"><span class="b-nm">STRANGELOVE</span><span class="b-cnt">2 SKUS</span></div>
+<div class="f-row" data-name="Melt My Heart" data-size="100ml" data-price="70000" data-profile="Amber">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://strangelovenyc.com/products/meltmyheart-eau-de-parfum?_pos=1&_psq=melt&_ss=e&_v=1.0&variant=42093350584409" target="_blank" rel="noopener" class="f-nm">Melt My Heart</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#7A3A00"></span><span class="f-pf">Amber</span><span class="f-mob"> · $960</span></div>
+    <div class="f-worn">It was always going to end like this.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
+    
+  </div>
+  <span class="f-msrp">$960</span>
+  <span class="f-inr">₹91,075</span>
+  <span class="f-inr-mob">₹91,075</span>
+  <span class="f-save">Save ₹21,075</span>
+  <span class="f-pr">₹70,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+<div class="f-row" data-name="Dead Of The Night" data-size="100ml" data-price="70000" data-profile="Amber Woody">
+  <div class="f-main">
+    <div class="f-nl"><a href="https://strangelovenyc.com/products/deadofnight-eau-de-parfum?_pos=1&_psq=dead&_ss=e&_v=1.0&variant=42093324795993" target="_blank" rel="noopener" class="f-nm">Dead Of The Night</a></div>
+    <div class="f-sub"><span class="f-sz">100ml EDP</span><span class="f-dot" style="background:#4A2A08"></span><span class="f-pf">Amber Woody</span><span class="f-mob"> · $960</span></div>
+    <div class="f-worn">The city is asleep. You are not.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
+    
+  </div>
+  <span class="f-msrp">$960</span>
+  <span class="f-inr">₹91,075</span>
+  <span class="f-inr-mob">₹91,075</span>
+  <span class="f-save">Save ₹21,075</span>
+  <span class="f-pr">₹70,000</span>
+  <button class="add-btn" onclick="toggleItem(this)"><span class="ab-label">+ ADD</span><span class="ab-minus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),-1)">−</span><span class="ab-num">1</span><span class="ab-plus" onclick="event.stopPropagation();qtyChange(this.closest('.add-btn'),1)">+</span></button>
+</div>
+</div>
+
 <div class="b-sec" data-brand="vilhelm parfumerie">
 <div class="b-hd"><span class="b-nm">VILHELM PARFUMERIE</span><span class="b-cnt">5 SKUS</span></div>
 <div class="f-row" data-name="Back To The Roots" data-size="100ml" data-price="19800" data-profile="Floral Woody Musk">
@@ -3008,6 +3525,7 @@ body::before{
     <div class="f-nl"><a href="https://vilhelmparfumerie.com/products/back-to-the-roots" target="_blank" rel="noopener" class="f-nm">Back To The Roots</a></div>
     <div class="f-sub"><span class="f-sz">100ml</span><span class="f-dot" style="background:#5A0A3A"></span><span class="f-pf">Floral Woody Musk</span><span class="f-mob"> · €250</span></div>
   <div class="f-worn">Knows exactly where they came from. Goes back anyway.</div>
+    <div class="f-badges"><span style="color:#B5861B;font-weight:700;font-family:var(--fC);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #B5861B;padding:1px 5px;white-space:nowrap;">CURATOR'S CHOICE</span></div>
   </div>
   <span class="f-msrp">€250</span>
   <span class="f-inr">₹27,825</span>
@@ -3360,7 +3878,7 @@ body::before{
     <div class="sf-logo egg-t" onclick="eggClick(2)" ontouchend="eggClick(2)" style="user-select:none;">
       <em>Decadent</em> <span>Olfactive™</span>
     </div>
-    <div class="sf-meta">128 SKUs · 35 Brands<br>All prices in INR · May 2026</div>
+    <div class="sf-meta">141 SKUs · 40 Houses<br>All prices in INR · May 2026</div>
   </div>
 </div>
 
@@ -3405,24 +3923,17 @@ body::before{
     </div>
     
   </div>
-  <div class="scta" id="scta">
-    <div class="scta-steps">
-      <div class="scta-hd">How to Order</div>
-      <div class="scta-step"><span class="scta-num">01</span><span class="scta-txt">Review your selection above</span></div>
-      <div class="scta-step"><span class="scta-num">02</span><span class="scta-txt">Screenshot this page</span></div>
-      <div class="scta-step"><span class="scta-num">03</span><span class="scta-txt">Send screenshot to Decadent Olfactive™ — tap the button below to open WhatsApp directly</span></div>
-      <div class="scta-step"><span class="scta-num">04</span><span class="scta-txt">Payment details shared on confirmation — Google Pay · PhonePe · Bank Transfer</span></div>
-      <div class="scta-step"><span class="scta-num">05</span><span class="scta-txt">Free shipping · Delivered within 3–5 business days</span></div>
+  <div class="order-section" id="scta">
+    <div class="o-form">
+      <span class="o-form-lbl">YOUR DETAILS — Required to generate order reference</span>
+      <input class="o-form-inp" id="o-name" type="text" placeholder="Full Name" autocomplete="name" autocorrect="off"/>
+      <input class="o-form-inp" id="o-mobile" type="tel" placeholder="Mobile Number (+91 XXXXXXXXXX)" autocomplete="tel"/>
+      <div class="o-form-err" id="o-form-err"></div>
     </div>
-    <a href="https://wa.me/919677275950?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order%20with%20Decadent%20Olfactive%E2%84%A2.%20Please%20find%20my%20screenshot%20attached." target="_blank" style="text-decoration:none;display:block;">
-      <button class="wa-order-btn">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.559 4.122 1.535 5.856L.057 23.882l6.198-1.625A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.369l-.36-.214-3.681.965.982-3.587-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
-        Open WhatsApp · Send Screenshot
-      </button>
-    </a>
-    <div class="scta-foot">
-      <button class="scta-cl" onclick="clearB()">Clear Basket</button>
-    </div>
+    <button class="order-btn" onclick="openCheckout()">
+      <span>PLACE ORDER</span><span>→</span>
+    </button>
+    <button class="order-clr" onclick="clearB()">CLEAR BASKET</button>
   </div>
 
 
@@ -3431,11 +3942,24 @@ body::before{
 
 <script>
 const p0=document.getElementById('p0'),p1=document.getElementById('p1'),p2=document.getElementById('p2'),p3=document.getElementById('p3');
-function hide(){const ids=['p0','p1','p1b','p2','p3'];ids.forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});}
-function goStock(){hide();p2.style.display='block';updateFab();window.scrollTo(0,0);}
-function goLanding(){hide();p1.style.display='flex';updateFab();window.scrollTo(0,0);}
-function goIntro(){hide();p0.style.display='flex';window.scrollTo(0,0);}
-function goBasket(){hide();p3.style.display='block';renderB();window.scrollTo(0,0);}
+function hide(){const ids=['p0','p1','p1b','p2','p3','p4'];ids.forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});}
+function nav(pg,fn){fn();try{history.pushState({pg},'',(pg==='p0'?'#intro':pg==='p1b'?'#news':pg==='p1'?'#landing':pg==='p2'?'#catalogue':'#basket'));}catch(e){}}
+function goStock(){nav('p2',()=>{hide();p2.style.display='block';updateFab();window.scrollTo(0,0);});}
+function goLanding(){nav('p1',()=>{hide();p1.style.display='flex';updateFab();window.scrollTo(0,0);});}
+function goIntro(){nav('p0',()=>{hide();p0.style.display='flex';window.scrollTo(0,0);});}
+function goBasket(){nav('p3',()=>{hide();p3.style.display='block';renderB();window.scrollTo(0,0);});}
+window.addEventListener('popstate',function(e){
+  if(!e.state)return;
+  const pg=e.state.pg;
+  hide();
+  if(pg==='p0'){p0.style.display='flex';}
+  else if(pg==='p1b'){document.getElementById('p1b').style.display='block';renderDispatch('all');}
+  else if(pg==='p1'){p1.style.display='flex';updateFab();}
+  else if(pg==='p2'){p2.style.display='block';updateFab();}
+  else if(pg==='p3'){p3.style.display='block';renderB();}
+  else if(pg==='p4'){document.getElementById('p4').style.display='block';}
+  window.scrollTo(0,0);
+});
 
 let bkt={};
 function toggleItem(btn){
@@ -3460,8 +3984,15 @@ function qtyChange(btn,delta){
   const name=r.dataset.name,size=r.dataset.size;
   const key=name+'|'+size;
   if(!bkt[key])return;
-  bkt[key].qty=Math.max(1,(bkt[key].qty||1)+delta);
-  btn.querySelector('.ab-num').textContent=bkt[key].qty;
+  const nq=(bkt[key].qty||1)+delta;
+  if(nq<=0){
+    delete bkt[key];
+    btn.classList.remove('in-basket');
+    btn.querySelector('.ab-num').textContent='1';
+    updateFab();return;
+  }
+  bkt[key].qty=nq;
+  btn.querySelector('.ab-num').textContent=nq;
   updateFab();
 }
 function updateFab(){
@@ -3482,7 +4013,7 @@ function renderB(){
   const keys=Object.keys(bkt);
   Array.from(c.children).forEach(x=>{if(x.id!=='be')x.remove();});
   if(!keys.length){e.style.display='block';os.style.display='none';sc.style.display='none';return;}
-  e.style.display='none';os.style.display='block';sc.style.display='block';
+  e.style.display='none';os.style.display='block';sc.style.display='block';sc.style.background='transparent';sc.style.borderTop='none';
   let sub=0;
   keys.forEach(k=>{
     const it=bkt[k];const qty=it.qty||1;sub+=it.price*qty;
@@ -3500,11 +4031,20 @@ function renderB(){
   document.getElementById('otot').textContent=fmt(tot);
 }
 function rmItem(k){
-  if(bkt[k]){bkt[k].btn.textContent='+ ADD';bkt[k].btn.classList.remove('in-basket');delete bkt[k];}
+  if(bkt[k]){
+    const b=bkt[k].btn;
+    b.classList.remove('in-basket');
+    b.querySelector('.ab-num').textContent='1';
+    delete bkt[k];
+  }
   updateFab();renderB();
 }
 function clearB(){
-  Object.keys(bkt).forEach(k=>{bkt[k].btn.textContent='+ ADD';bkt[k].btn.classList.remove('in-basket');});
+  Object.keys(bkt).forEach(k=>{
+    const b=bkt[k].btn;
+    b.classList.remove('in-basket');
+    b.querySelector('.ab-num').textContent='1';
+  });
   bkt={};updateFab();renderB();
 }
 
@@ -3720,12 +4260,7 @@ function renderDispatch(filter){
 }
 
 function goIntro(){hide();p0.style.display='flex';window.scrollTo(0,0);}
-function goDispatch(){
-  hide();
-  document.getElementById('p1b').style.display='block';
-  renderDispatch('all');
-  window.scrollTo(0,0);
-}
+function goDispatch(){nav('p1b',()=>{hide();document.getElementById('p1b').style.display='block';renderDispatch('all');window.scrollTo(0,0);});}
 
 document.addEventListener('click',function(e){
   if(!e.target.classList.contains('od-tab')) return;
@@ -3746,7 +4281,498 @@ document.addEventListener('click',function(e){
   // Pre-render dispatch so it's ready when navigated to
   if(typeof renderDispatch==='function') renderDispatch('all');
 })();
+
+
+// ══════════════════════════════════════════════════════════════
+// FRAGRANTICA LINKS — inject dynamically
+// ══════════════════════════════════════════════════════════════
+function injectFragranticaLinks(){
+  document.querySelectorAll('.f-row').forEach(row=>{
+    if(row.querySelector('.f-fragrantica'))return;
+    const name=row.dataset.name||'';
+    const sec=row.closest('.b-sec');
+    const brand=(sec&&sec.querySelector('.b-nm'))?sec.querySelector('.b-nm').textContent.trim():'';
+    if(!name)return;
+    const q=encodeURIComponent(brand+' '+name);
+    const a=document.createElement('a');
+    a.href='https://www.fragrantica.com/search/?query='+q;
+    a.target='_blank';a.rel='noopener';
+    a.className='f-fragrantica';a.textContent='fragrantica \u2192';
+    const fsub=row.querySelector('.f-sub');
+    if(fsub)fsub.appendChild(a);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// SCENT EVOLUTION — notes data + dynamic toggle injection
+// ══════════════════════════════════════════════════════════════
+const SCENT_NOTES={
+  'Dia 40 Woman':{top:['Bergamot','Aldehydes','White Rose','Lemon'],heart:['Jasmine','Iris','Ylang-Ylang','Lily'],base:['Sandalwood','Musk','Amber','Vetiver']},
+  'Epic Man':{top:['Frankincense','Pink Pepper','Coriander'],heart:['Rose','Cedarwood','Vetiver','Leather'],base:['Oud','Amber','Musk','Sandalwood']},
+  'Gold Man':{top:['Lemon','Bergamot','Elemi','Neroli'],heart:['Vetiver','Rose','Jasmine','Incense'],base:['Frankincense','Leather','Musk','Civet']},
+  'Interlude Man':{top:['Bergamot','Oregano','Incense','Pepper'],heart:['Rose','Amber','Oud','Sandalwood'],base:['Leather','Sandalwood','Musk','Amber']},
+  'Interlude Black Iris Man':{top:['Bergamot','Iris','Incense','Cardamom'],heart:['Black Iris','Rose','Oud','Labdanum'],base:['Leather','Sandalwood','Amber','Patchouli']},
+  'Overture Woman':{top:['Bergamot','Lemon','Orange Blossom'],heart:['Rose','Jasmine','Iris'],base:['Amber','Musk','Sandalwood']},
+  'Overture Man':{top:['Citrus','Bergamot','Cardamom'],heart:['Cedarwood','Vetiver','Amber'],base:['Sandalwood','Musk','Tonka Bean']},
+  'Dia Man':{top:['Bergamot','Mandarin','Violet Leaf'],heart:['Jasmine','Geranium','Cedarwood'],base:['Sandalwood','Musk','Amber']},
+  'Opus XV King Blue':{top:['Bergamot','Pink Pepper','Cardamom'],heart:['Iris','Guaiac Wood','Rose'],base:['Oud','Amber','Musk','Vetiver']},
+  'Beach Hut Man':{top:['Grapefruit','Marine Accord','Bergamot'],heart:['Cedarwood','Sage','Patchouli'],base:['Driftwood','Musk','Amber']},
+  'Jubilation 25 Women':{top:['Blackcurrant','Bergamot','Orange','Frankincense'],heart:['Rose','Jasmine','Patchouli','Labdanum'],base:['Oud','Amber','Musk','Sandalwood']},
+  'Gold Women':{top:['Aldehydes','Bergamot','Neroli','Orange'],heart:['Rose','Jasmine','Lily','Ylang-Ylang'],base:['Sandalwood','Musk','Amber','Vetiver']},
+  'Journey Women':{top:['Cassis','Bergamot','Orange'],heart:['Rose','Heliotrope','Lily','Iris'],base:['Amber','Musk','Sandalwood','Cedar']},
+  'Portrayal Women':{top:['Bergamot','Black Currant','Freesia'],heart:['Rose','Jasmine','Lily of the Valley'],base:['Amber','Sandalwood','Musk']},
+  'Reflection Women':{top:['Mandarin','Bergamot','Freesia'],heart:['Rose','Tuberose','Jasmine'],base:['Sandalwood','Musk','White Amber']},
+  'X Masculine':{top:['Bergamot','Grapefruit','Green Pepper'],heart:['Iris','Orris','Cedar','Violet'],base:['Vetiver','Amber','Sandalwood','Musk']},
+  'Blonde Amber':{top:['Pink Pepper','Bergamot','Aldehyde'],heart:['Iris','Amber','Vanilla','Rose'],base:['Sandalwood','Musk','Benzoin','Labdanum']},
+  'Amber Intense':{top:['Saffron','Cardamom','Pink Pepper'],heart:['Rose','Oud','Labdanum','Amber'],base:['Sandalwood','Musk','Benzoin','Patchouli']},
+  'Sahraa':{top:['Saffron','Cardamom','Pink Pepper','Oud'],heart:['Rose','Incense','Amber','Oud'],base:['Sandalwood','Musk','Patchouli','Labdanum']},
+  'Oud Noir Intense':{top:['Saffron','Black Pepper','Galbanum'],heart:['Oud','Rose','Incense','Myrrh'],base:['Sandalwood','Amber','Musk','Leather']},
+  'Cannabis Intense':{top:['Bergamot','Cannabis Leaf','Violet'],heart:['Iris','Cedar','Musk'],base:['Sandalwood','Vetiver','Amber']},
+  'Minuit Et Demi':{top:['Bergamot','Saffron','Rose'],heart:['Oud','Incense','Labdanum'],base:['Amber','Sandalwood','Musk','Patchouli']},
+  'Oud Vendome':{top:['Saffron','Pink Pepper','Bergamot'],heart:['Oud','Rose','Incense'],base:['Sandalwood','Amber','Musk','Leather']},
+  'Santal Calling':{top:['Bergamot','Cardamom','Pink Pepper'],heart:['Sandalwood','Cedarwood','Iris'],base:['Musk','Amber','Vetiver','Tonka Bean']},
+  'Aoud':{top:['Bergamot','Lemon','Aldehydes'],heart:['Rose','Oud','Saffron','Jasmine'],base:['Sandalwood','Musk','Amber','Leather']},
+  'Aoud Extraordinaire':{top:['Bergamot','Pink Pepper','Lemon'],heart:['Rose','Oud','Incense','Saffron'],base:['Sandalwood','Musk','Amber','Leather']},
+  'Alexandria II':{top:['Bergamot','Lemon','Orange Blossom'],heart:['Rose','Oud','Saffron','Jasmine'],base:['Sandalwood','Musk','Amber','Patchouli']},
+  'Ether':{top:['Yuzu','Bergamot','Aldehydes','Marine'],heart:['Iris','Violet','Musk'],base:['Sandalwood','Amber','Vetiver','White Musk']},
+  'Naxos':{top:['Bergamot','Lemon','Tobacco Flower'],heart:['Vanilla','Lavender','Honey'],base:['Sandalwood','Tonka Bean','Musk','Amber']},
+  'Via Cavour I':{top:['Bergamot','Lemon','Saffron'],heart:['Rose','Oud','Amber'],base:['Sandalwood','Musk','Benzoin','Labdanum']},
+  '40 Knots':{top:['Marine Accord','Bergamot','Grapefruit'],heart:['Cedarwood','Musk','Iris'],base:['Sandalwood','Ambergris','Musk']},
+  'Richwood':{top:['Bergamot','Black Pepper','Juniper'],heart:['Cedarwood','Vetiver','Incense','Gaiac Wood'],base:['Sandalwood','Amber','Musk','Labdanum']},
+  'Duran Duran Black Moonlight':{top:['Bergamot','Pink Pepper','Black Currant'],heart:['Rose','Oud','Incense','Amber'],base:['Sandalwood','Musk','Labdanum','Patchouli']},
+  'Nio':{top:['Grapefruit','Bergamot','Green Tea'],heart:['Cedarwood','Iris','Vetiver'],base:['Sandalwood','Musk','Amber']},
+  'Red Hoba':{top:['Saffron','Pink Pepper','Bergamot'],heart:['Rose','Oud','Amber','Incense'],base:['Sandalwood','Amber','Musk','Labdanum']},
+  'Soul Of Oud':{top:['Saffron','Cardamom','Incense'],heart:['Rose','Oud','Amber','Myrrh'],base:['Sandalwood','Musk','Patchouli','Labdanum']},
+  'Imperator':{top:['Bergamot','Saffron','Black Pepper','Rum'],heart:['Rose','Oud','Tobacco','Incense'],base:['Sandalwood','Amber','Leather','Musk']},
+  'Rain':{top:['Green Accord','Violet Leaf','Marine','Bergamot'],heart:['Rose','Lily','Cedar'],base:['Musk','Sandalwood','Amber','Oakmoss']},
+  '888 (Discontinued)':{top:['Clove','Pepper','Smoke','Incense'],heart:['Incense','Leather','Rose','Oud'],base:['Amber','Musk','Patchouli','Labdanum']},
+  'African Leather':{top:['Bergamot','Black Pepper','Grapefruit'],heart:['Leather','Oud','Incense','Rose'],base:['Amber','Sandalwood','Musk','Vetiver']},
+  'Deep Ocean Amber':{top:['Marine','Bergamot','Sea Salt'],heart:['Amber','Musk','Cedarwood'],base:['Sandalwood','Amber','Musk','Ambergris']},
+  'Green Irish Tweed':{top:['Lemon','Verbena','Iris Leaves'],heart:['Violet Leaf','Sandalwood','Iris'],base:['Ambergris','Musk','Sandalwood']},
+  'Le Gemme Tygar':{top:['Bergamot','Saffron','Labdanum'],heart:['Oud','Amber','Incense'],base:['Sandalwood','Musk','Labdanum']},
+  'Oud For Greatness Neo':{top:['Bergamot','Pink Pepper','Patchouli Leaf'],heart:['Oud','Rose','Saffron','Incense'],base:['Sandalwood','Amber','Musk','Tonka Bean']},
+  'Oud Stallion':{top:['Saffron','Pink Pepper','Bergamot'],heart:['Rose','Oud','Incense','Amber'],base:['Sandalwood','Musk','Leather','Patchouli']},
+  'Dolce Amalfi':{top:['Bergamot','Lemon','Mandarin','Orange'],heart:['Jasmine','Rose','Iris','Neroli'],base:['Musk','Sandalwood','Amber','White Musk']}
+};
+
+function injectEvoToggles(){
+  document.querySelectorAll('.f-row').forEach(row=>{
+    const name=row.dataset.name;
+    if(!name||!SCENT_NOTES[name])return;
+    if(row.querySelector('.evo-toggle'))return;
+    const worn=row.querySelector('.f-worn');
+    if(!worn)return;
+    const btn=document.createElement('button');
+    btn.className='evo-toggle';
+    btn.textContent='SCENT JOURNEY \u2193';
+    btn.setAttribute('aria-expanded','false');
+    btn.onclick=function(e){
+      e.stopPropagation();
+      const isOpen=btn.classList.contains('open');
+      btn.classList.toggle('open',!isOpen);
+      btn.textContent=isOpen?'SCENT JOURNEY \u2193':'SCENT JOURNEY \u2191';
+      btn.setAttribute('aria-expanded',String(!isOpen));
+      let panel=row.querySelector('.evo-panel');
+      if(!panel){
+        const n=SCENT_NOTES[name];
+        panel=document.createElement('div');
+        panel.className='evo-panel';
+        panel.innerHTML=
+          '<div class="evo-row"><div class="evo-col"><span class="evo-phase">TOP</span><span class="evo-time">0 \u2013 30 min</span></div><div class="evo-notes">'+n.top.map(x=>'<span class="evo-pill">'+x+'</span>').join('')+'</div></div>'+
+          '<div class="evo-row"><div class="evo-col"><span class="evo-phase">HEART</span><span class="evo-time">1 \u2013 4 hr</span></div><div class="evo-notes">'+n.heart.map(x=>'<span class="evo-pill">'+x+'</span>').join('')+'</div></div>'+
+          '<div class="evo-row"><div class="evo-col"><span class="evo-phase">BASE</span><span class="evo-time">4 \u2013 8+ hr</span></div><div class="evo-notes">'+n.base.map(x=>'<span class="evo-pill">'+x+'</span>').join('')+'</div></div>';
+        worn.insertAdjacentElement('afterend',panel);
+        worn.insertAdjacentElement('afterend',btn);
+        panel.classList.add('open');
+        return;
+      }
+      panel.classList.toggle('open',!isOpen);
+    };
+    worn.insertAdjacentElement('afterend',btn);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// LAYERING WORKSHOP
+// ══════════════════════════════════════════════════════════════
+const FRAG_FAM={
+  'Dia 40 Woman':'floral','Epic Man':'woody','Gold Man':'woody','Interlude Man':'woody','Interlude Black Iris Man':'woody',
+  'Opus XV King Blue':'amber','Outlands':'spicy','Overture Woman':'amber','Dia Man':'floral','Overture Man':'woody',
+  'Meander':'amber','Honour Man':'woody','Opus XVI Timber':'woody','Beach Hut Man':'fresh',
+  'Jubilation 25 Women':'amber','Gold Women':'floral','Journey Women':'amber','Portrayal Women':'amber','Reflection Women':'floral',
+  'Gris Charnel':'spicy','Pas Ce Soir':'floral','Cannabis Dolce':'oriental','Cannabis Fruttata':'fresh','Real Patchouly':'woody',
+  'Le Gemme Tygar':'amber','Bal D\'Afrique':'floral','Blanche':'floral','Bois Obscur':'woody','Casablanca Lily':'floral',
+  'Mojave Ghost':'woody','Rose Of No Man\'s Land':'floral','Vanille Antique':'oriental','Dolce Amalfi':'floral',
+  'X Masculine':'woody','Blonde Amber':'amber','888 (Discontinued)':'spicy','Man':'woody','Green Irish Tweed':'fresh',
+  'Do Son':'floral','Eau Capitale':'floral','Vetyverio':'floral','Oud Vendome':'oud','Blue Talisman':'amber',
+  'Blue Talisman Extrait':'amber','Santal Calling':'woody','Amber Intense':'amber','Cannabis Intense':'fresh',
+  'Oud Noir Intense':'oud','Sahraa':'oud','Minuit Et Demi':'oriental','Dom Rosa':'fresh','Ambre Chromatique':'amber',
+  'Oud Stallion':'oud','African Leather':'leather','Irish Leather':'leather','Oriental Leather':'leather','Le Mat':'oriental',
+  'Absolue Pour Le Soir':'amber','Gentle Fluidity Gold':'amber','Castling':'fresh','Double Attack':'fresh','Gambit':'leather',
+  'Favonius':'woody','Nanshe':'amber','Pachuli Kozha':'leather','Suede Et Safran':'leather','Salome':'amber',
+  'Layton':'amber','Percival':'fresh','Perseus':'woody','The Omniscient Mister Thompson':'amber',
+  'The Tragedy Of Lord George':'oriental','The World According To Arthur':'oriental',
+  'Ambre Gris':'amber','Bois D\'Oud':'oud','Oud Imperial':'oud','Soul Of Oud':'oud',
+  'Aoud':'oud','Aoud Extraordinaire':'oud','Vetiver':'fresh','Imperator':'oriental','Rain':'fresh',
+  'Deep Ocean Amber':'amber','Back To The Roots':'floral','Body Paint':'fresh','Dear Polly':'fresh',
+  'Room Service':'amber','The Oud Affair':'amber','Al-Khatt':'oud','Alexandria II':'oud',
+  'Alexandria II Travel':'oud','Ether':'fresh','Gao':'oud','Groove Xcape':'fresh','Renaissance':'fresh',
+  'Nio':'fresh','40 Knots':'fresh','Torino 24':'floral','Naxos':'amber','Via Cavour I':'amber',
+  'Duran Duran Black Moonlight':'amber','Symphonium':'amber','Red Hoba':'amber','Decas':'amber',
+  'Fars':'amber','Richwood':'woody','Byzantine Amber':'amber','Noir Epices':'spicy',
+  'Addictive Vibration':'floral','Blessed Baraka':'amber','Can\'t Get Enough':'floral',
+  'Oud For Greatness Neo':'oud','Psychedelic Love':'floral','Chypre Azural':'fresh',
+  'Line 618':'woody','Dia Man':'floral'
+};
+
+const LYR_C={
+  'oud-fresh':{s:4,l:'Excellent Pairing',v:'Fresh notes lift oud without competing. Apply fresh first, let it settle 10 minutes, then layer oud on pulse points. The opening is bright; the dry-down is complex and long-wearing.'},
+  'oud-floral':{s:4,l:'Excellent Pairing',v:'A classic — the floral softens oud\'s more animalic edges. Apply floral on skin, oud on pulse points or clothing. Expect something genuinely addictive.'},
+  'oud-woody':{s:3,l:'Good Pairing',v:'Complementary depth — woody notes add structure to oud. Apply in equal measure. Expect a slow, measured dry-down.'},
+  'oud-amber':{s:3,l:'Good Pairing — Use Restraint',v:'Both are warm and dense. One spray of each, maximum. Apply amber first as the base, then oud on top.'},
+  'oud-leather':{s:3,l:'Good Pairing',v:'A brooding, considered combination. Leather first, oud second — both very light. This is a serious fragrance decision for serious occasions.'},
+  'oud-spicy':{s:3,l:'Good Pairing',v:'The spice amplifies oud\'s character. Use a quarter of your usual amount. This will announce itself before you enter the room.'},
+  'oud-oriental':{s:2,l:'Proceed With Caution',v:'Two heavy signatures competing for dominance. You risk losing the subtlety of each. These fragrances are more interesting worn separately.'},
+  'oud-oud':{s:1,l:'Do Not Layer',v:'Two ouds are not twice the oud. They compete, muddy, and clash. Wear one.'},
+  'amber-fresh':{s:4,l:'Excellent Pairing',v:'Fresh notes cool amber and prevent it becoming oppressive. Apply fresh on skin, amber on clothing or hair. Works in all seasons.'},
+  'amber-floral':{s:4,l:'Excellent Pairing',v:'A warm, layered architecture. Apply amber sparingly — it amplifies everything above it. Floral on skin, amber on hair or clothes.'},
+  'amber-woody':{s:4,l:'Excellent Pairing',v:'One of the most reliable combinations. Apply together on pulse points. Ages beautifully across the day.'},
+  'amber-leather':{s:3,l:'Good Pairing',v:'Warm and authoritative. Leather gives amber structure. Apply leather first, then amber.'},
+  'amber-spicy':{s:3,l:'Good Pairing',v:'The spice cuts amber\'s sweetness. Spicy on top, amber underneath.'},
+  'amber-oriental':{s:2,l:'Use Caution',v:'Both are dense and warm. If you insist: ambient application only — spray into the air and walk through.'},
+  'amber-amber':{s:1,l:'Redundant',v:'Two ambers collapse into one undifferentiated mass. Wear one.'},
+  'fresh-floral':{s:4,l:'Excellent Pairing',v:'Clean and sophisticated. Apply fresh first, floral second. Works particularly well in warm weather.'},
+  'fresh-woody':{s:4,l:'Excellent Pairing',v:'A modern, versatile combination. The woody base gives the fresh notes somewhere interesting to go.'},
+  'fresh-leather':{s:3,l:'Good Pairing',v:'Cool air over warm leather. Apply leather first, then a light touch of fresh on top.'},
+  'fresh-spicy':{s:3,l:'Good Pairing',v:'The fresh tames the spice. Spicy on skin, fresh lightly over the top.'},
+  'fresh-oriental':{s:3,l:'Good Pairing',v:'An unexpected combination. Light application of both. Oriental provides the base; fresh provides sparkle.'},
+  'fresh-fresh':{s:2,l:'Redundant',v:'Two fresh fragrances create more of the same, not complexity. Pick one and pair it with something contrasting.'},
+  'floral-woody':{s:4,l:'Excellent Pairing',v:'One of the most reliable combinations. Wood grounds the floral. Apply woody first, floral on top.'},
+  'floral-leather':{s:3,l:'Good Pairing',v:'An unusual but rewarding pairing. Wear lightly — this is more than the sum of its parts.'},
+  'floral-spicy':{s:3,l:'Good Pairing',v:'Spice adds dimension to the floral. Floral first, spice as a second layer.'},
+  'floral-oriental':{s:3,l:'Good Pairing',v:'A classic evening combination. Heavy — reserve for significant occasions.'},
+  'floral-floral':{s:2,l:'Proceed Carefully',v:'Two florals work only if from very different families — one white floral, one rose-dominant.'},
+  'woody-leather':{s:4,l:'Excellent Pairing',v:'The defining masculine layering combination. Leather on skin, wood on fabric. Both can be generous.'},
+  'woody-spicy':{s:3,l:'Good Pairing',v:'Wood tempers spice and gives it longevity.'},
+  'woody-oriental':{s:3,l:'Good Pairing',v:'A serious combination. Woody adds dryness to the oriental.'},
+  'woody-woody':{s:2,l:'Proceed Carefully',v:'Works only with different wood families — e.g. cedar with sandalwood.'},
+  'leather-spicy':{s:3,l:'Good Pairing',v:'Spice sharpens leather. Apply leather first, spice lightly on top.'},
+  'leather-oriental':{s:3,l:'Good Pairing',v:'Slow-burning and powerful. Both applied with restraint.'},
+  'leather-leather':{s:1,l:'Do Not Layer',v:'Two leathers are redundant. Wear one.'},
+  'spicy-oriental':{s:2,l:'Use Caution',v:'Both project and are warm — together they can become confrontational.'},
+  'spicy-spicy':{s:1,l:'Do Not Layer',v:'Two spicy signatures compete. Wear one.'},
+  'oriental-oriental':{s:1,l:'Do Not Layer',v:'Two orientals make one very heavy fragrance. Wear one.'}
+};
+
+function getCompat(f1,f2){
+  const a=FRAG_FAM[f1]||'woody',b=FRAG_FAM[f2]||'woody';
+  // Try both orderings — LYR_C keys are not alphabetically normalised
+  return LYR_C[a+'-'+b]||LYR_C[b+'-'+a]||
+    {s:3,l:'Unexplored Territory',v:'No specific data for this combination. General principle: apply the denser signature first, the lighter one on top. One spray of each. Assess after 30 minutes on skin before adding more.'};
+}
+
+function openLayer(){
+  const modal=document.getElementById('layer-modal');
+  const sa=document.getElementById('lyr-a'),sb=document.getElementById('lyr-b');
+  if(sa.options.length<=1){
+    const names=[];
+    document.querySelectorAll('.f-row:not(.sold-out)').forEach(r=>{
+      const n=r.dataset.name;if(n&&!names.includes(n))names.push(n);
+    });
+    names.sort().forEach(n=>{
+      const makeOpt=()=>{const o=document.createElement('option');o.value=n;o.textContent=n;return o;};
+      sa.appendChild(makeOpt());sb.appendChild(makeOpt());
+    });
+  }
+  document.getElementById('lyr-result').classList.remove('show');
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLayer(){document.getElementById('layer-modal').classList.remove('open');document.body.style.overflow='';}
+function doLayer(){
+  const a=document.getElementById('lyr-a').value;
+  const b=document.getElementById('lyr-b').value;
+  const res=document.getElementById('lyr-result');
+  if(!a||!b){res.innerHTML='<div class="lyr-verdict" style="color:var(--red)">Select two fragrances.</div>';res.classList.add('show');return;}
+  if(a===b){res.innerHTML='<div class="lyr-verdict" style="color:var(--red)">Select two different fragrances.</div>';res.classList.add('show');return;}
+  const c=getCompat(a,b);
+  const stars=['\u2014','\u2756','\u2756\u2756','\u2756\u2756\u2756','\u2756\u2756\u2756\u2756','\u2756\u2756\u2756\u2756\u2756'];
+  document.getElementById('lyr-pair').textContent=a+' + '+b;
+  const sc=document.getElementById('lyr-score');
+  sc.textContent=stars[c.s]+' '+c.l;
+  sc.className='lyr-score s'+c.s;
+  document.getElementById('lyr-verdict').textContent=c.v;
+  const seq=document.getElementById('lyr-seq');
+  const seqTxt=document.getElementById('lyr-seq-txt');
+  if(c.s>=3){
+    const famA=FRAG_FAM[a]||'',famB=FRAG_FAM[b]||'';
+    const heavy=['oud','amber','oriental','leather','spicy'];
+    let first=a,second=b;
+    if(heavy.indexOf(famB)>heavy.indexOf(famA)){first=b;second=a;}
+    seqTxt.textContent='\u2460 Apply '+first+' on pulse points. \u2461 Wait 10\u201315 minutes. \u2462 Layer '+second+' on top or on clothing.';
+    seq.style.display='block';
+  }else{seq.style.display='none';}
+  res.classList.add('show');
+}
+
+
+// ══════════════════════════════════════════════════════════════
+// CHECKOUT — WhatsApp-first, no payment on site
+// ══════════════════════════════════════════════════════════════
+function openCheckout(){
+  const oName=document.getElementById('o-name');
+  const oMob=document.getElementById('o-mobile');
+  const formErr=document.getElementById('o-form-err');
+  const cleanName=(oName?oName.value:'').trim();
+  const cleanMob=(oMob?oMob.value:'').replace(/\D/g,'').slice(-10);
+  if(!cleanName||cleanName.length<2){
+    formErr.textContent='\u2715 Please enter your full name.';formErr.classList.add('show');
+    if(oName)oName.focus();return;
+  }
+  if(cleanMob.length<10){
+    formErr.textContent='\u2715 Please enter a valid 10-digit mobile number.';formErr.classList.add('show');
+    if(oMob)oMob.focus();return;
+  }
+  formErr.classList.remove('show');
+  const d=new Date();
+  const oid='DO-'+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'-'+Math.random().toString(36).substr(2,4).toUpperCase();
+  const keys=Object.keys(bkt);
+  let sub=0;
+  keys.forEach(k=>sub+=bkt[k].price*(bkt[k].qty||1));
+  const disc=egg?Math.round(sub*0.03):0;
+  const tot=sub-disc;
+  // Order summary HTML
+  let sh='';
+  keys.forEach(k=>{
+    const it=bkt[k];const q=it.qty||1;
+    sh+='<div class="co-sum-row"><span>'+it.name+(q>1?' \xd7'+q:'')+' <span style="opacity:0.5;font-size:8px;">('+it.size+')</span></span><span>'+fmt(it.price*q)+'</span></div>';
+  });
+  if(disc>0)sh+='<div class="co-sum-row" style="color:var(--red)"><span>\uD83E\uDD5A Discount 3%</span><span>\u2212'+fmt(disc)+'</span></div>';
+  sh+='<div class="co-sum-row tot"><span>TOTAL</span><span>'+fmt(tot)+'</span></div>';
+  document.getElementById('co-sum-display').innerHTML=sh;
+  const oidEl=document.getElementById('co-oid-display');
+  oidEl.textContent='ORDER REF: '+oid;oidEl.style.display='block';
+  // WhatsApp message — customer to Shiva, order details pre-filled
+  const items=keys.map(k=>{
+    const it=bkt[k];const q=it.qty||1;
+    return '\u2022 '+it.name+(q>1?' \xd7'+q:'')+' ('+it.size+') \u2014 '+fmt(it.price*q);
+  }).join('\n');
+  const waMsg=encodeURIComponent(
+    'Hi Shiva,\n\n'+
+    'I\'d like to place an order with Decadent Olfactive\u2122.\n\n'+
+    items+'\n\n'+
+    'Order Ref: '+oid+'\n'+
+    'Total: '+fmt(tot)+'\n\n'+
+    'Name: '+cleanName+'\n'+
+    'Mobile: +91'+cleanMob+'\n\n'+
+    'Please confirm and send payment details.'
+  );
+  document.getElementById('co-wa-link').href='https://wa.me/919677275950?text='+waMsg;
+  document.getElementById('checkout-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCheckout(){document.getElementById('checkout-modal').classList.remove('open');document.body.style.overflow='';}
+
+// ══════════════════════════════════════════════════════════════
+// QUIZ (p4) — Provocation Method, inline SPA
+// ══════════════════════════════════════════════════════════════
+const QZ_STATEMENTS=[
+  {stmt:'Projection is bad manners.',sub:'A fragrance that announces itself across a room was not designed to be noticed \u2014 it was designed to be heard.',tags:{yes:['restrained','subtle'],no:['bold','presence']}},
+  {stmt:'Clean fragrances are <em>lazy</em>.',sub:'Smelling \u201Cfresh\u201D and \u201Cclean\u201D is the olfactory equivalent of saying nothing. Comfort over character.',tags:{yes:['dark','complex'],no:['clean','fresh']}},
+  {stmt:'Oud is overrated.',sub:'The most imitated note in perfumery. The most misunderstood. The most often done wrong.',tags:{yes:['floral','fresh'],no:['oud','oriental']}},
+  {stmt:'A good fragrance should cause <em>comments</em>.',sub:'Not compliments. Comments. A conversation-starter, not a crowd-pleaser.',tags:{yes:['bold','statement'],no:['personal','private']}},
+  {stmt:"I'd rather smell interesting than pleasant.",sub:'Pleasant is for hotel lobbies. Interesting is for people worth remembering.',tags:{yes:['complex','dark'],no:['floral','clean']}},
+  {stmt:'Wearing something recognisable is a social concession.',sub:'If someone can identify your fragrance by name, you are wearing a uniform.',tags:{yes:['niche','rare'],no:['accessible','recognisable']}},
+  {stmt:'Fragrance is most powerful when it surprises you.',sub:"You shouldn't smell your own perfume after the first hour. That's not failure \u2014 that's skin chemistry doing its job.",tags:{yes:['evolving','complex'],no:['consistent','reliable']}},
+  {stmt:'Three exceptional bottles over ten average ones.',sub:'A wardrobe of ten mediocre fragrances is not a collection. It is an apology.',tags:{yes:['curated','quality'],no:['variety','versatile']}}
+];
+const QZ_PERSONAS=[
+  {name:'The Quiet Authority',desc:'You wear fragrance the way a well-dressed person handles a room \u2014 without demanding attention. You would rather be discovered than announced.',tags:['restrained','subtle','personal','private','niche'],matches:[
+    {n:'Richwood',b:'Xerjoff',w:'Quiet. Substantial. Rewards proximity.'},
+    {n:'Green Irish Tweed',b:'Creed',w:'The original of its kind. Still unreplicated.'},
+    {n:'Santal Calling',b:'Ex Nihilo',w:'Sandalwood done right \u2014 skin-close and lasting.'},
+    {n:'Nio',b:'Xerjoff',w:'Fresh intelligence. Never announces itself.'}
+  ]},
+  {name:'The Provocation',desc:'You are not interested in being liked \u2014 you are interested in being interesting. The comments you receive are not always compliments. You are fine with that.',tags:['bold','statement','complex','dark','presence'],matches:[
+    {n:'888 (Discontinued)',b:'Comme des Garçons',w:'Discontinued because it was too specific. Now worth finding.'},
+    {n:'Sahraa',b:'Fragrance du Bois',w:'Oud, saffron, and no apologies.'},
+    {n:'Amber Intense',b:'Fragrance du Bois',w:'Projects with intention. Not for the tentative.'},
+    {n:'Interlude Man',b:'Amouage',w:'A fragrance that starts arguments. Good ones.'}
+  ]},
+  {name:'The Connoisseur',desc:'You know what you want and why. Your collection is curated, not accumulated. Quality is non-negotiable. You have returned a fragrance because it was reformulated.',tags:['curated','quality','niche','rare','evolving'],matches:[
+    {n:'Opus XV King Blue',b:'Amouage',w:'The Opus series exists for people who take this seriously.'},
+    {n:'Soul Of Oud',b:'Ram\xf3n Moncal',w:'Oud at its most considered.'},
+    {n:'Alexandria II',b:'Xerjoff',w:'The benchmark for layered complexity.'},
+    {n:'Imperator',b:'Royal Crown',w:'Handmade. Numbered. Uncompromising.'}
+  ]},
+  {name:'The Sensualist',desc:'You wear fragrance as a physical experience \u2014 something that changes on your skin, reveals itself slowly, and creates warmth in proximity. You are not performing for a room.',tags:['complex','oriental','oud','accessible'],matches:[
+    {n:'Naxos',b:'Xerjoff',w:"Tobacco, lavender, honey. The seducer's formula."},
+    {n:'Jubilation 25 Women',b:'Amouage',w:'A depth charge in floral form.'},
+    {n:'Minuit Et Demi',b:'Fragrance du Bois',w:'Half past midnight. Appropriately named.'},
+    {n:'Gold Women',b:'Amouage',w:'Aldehydic floral with genuine presence.'}
+  ]},
+  {name:'The Modernist',desc:'You believe in fragrance that moves with you \u2014 clean without being bland, present without being loud. Your preference is for restraint executed brilliantly.',tags:['fresh','clean','reliable','versatile','consistent'],matches:[
+    {n:'Ether',b:'Xerjoff',w:'The most elegant fresh you will find at this level.'},
+    {n:'40 Knots',b:'Xerjoff',w:'Marine, without any of the clich\xe9s.'},
+    {n:'Renaissance',b:'Xerjoff',w:'A fresh that carries itself with authority.'},
+    {n:'Beach Hut Man',b:'Amouage',w:'What fresh fragrance aspires to be.'}
+  ]}
+];
+
+let qzAnswers=[],qzCur=0;
+function goQuiz(){nav('p4',()=>{hide();document.getElementById('p4').style.display='block';qzReset();window.scrollTo(0,0);});}
+function qzShow(){
+  const s=QZ_STATEMENTS[qzCur];
+  document.getElementById('qz-num').textContent='STATEMENT '+String(qzCur+1).padStart(2,'0')+' / 08';
+  document.getElementById('qz-counter').textContent=(qzCur+1)+' / 8';
+  document.getElementById('qz-stmt').innerHTML=s.stmt;
+  document.getElementById('qz-sub').textContent=s.sub;
+  document.getElementById('qz-bar').style.width=((qzCur+1)/8*100)+'%';
+}
+function qzAnswer(yes){
+  qzAnswers.push({yes,tags:QZ_STATEMENTS[qzCur].tags[yes?'yes':'no']});
+  qzCur++;
+  if(qzCur<QZ_STATEMENTS.length){qzShow();}else{qzShowResult();}
+}
+function qzScorePersona(p){let s=0;qzAnswers.forEach(a=>{a.tags.forEach(t=>{if(p.tags.includes(t))s++;});});return s;}
+function qzShowResult(){
+  document.getElementById('qz-card').style.display='none';
+  let best=QZ_PERSONAS[0],bestScore=-1;
+  QZ_PERSONAS.forEach(p=>{const s=qzScorePersona(p);if(s>bestScore){bestScore=s;best=p;}});
+  document.getElementById('qz-rname').textContent=best.name;
+  document.getElementById('qz-rdesc').textContent=best.desc;
+  document.getElementById('qz-rmatches').innerHTML=best.matches.map(m=>
+    '<div class="qz-match"><div class="qz-match-name">'+m.n+'</div><div class="qz-match-brand">'+m.b+'</div><div class="qz-match-why">'+m.w+'</div></div>'
+  ).join('');
+  document.getElementById('qz-result').style.display='block';
+  document.getElementById('qz-bar').style.width='100%';
+  window.scrollTo(0,0);
+}
+function qzReset(){
+  qzAnswers=[];qzCur=0;
+  document.getElementById('qz-card').style.display='flex';
+  document.getElementById('qz-result').style.display='none';
+  qzShow();
+}
+
+// ══════════════════════════════════════════════════════════════
+// MODAL BACKDROP CLOSE
+// ══════════════════════════════════════════════════════════════
+['layer-modal','checkout-modal'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el)el.addEventListener('click',function(e){if(e.target===el){el.classList.remove('open');document.body.style.overflow='';}});
+});
+
+// ══════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',function(){
+  injectFragranticaLinks();
+  injectEvoToggles();
+});
+
 </script>
+
+
+
+<!-- ═══ PAGE 4 — SCENT QUIZ ═══ -->
+<div id="p4">
+  <div class="qz-nav">
+    <button class="qz-nav-back" onclick="goLanding()">← BACK</button>
+    <span class="qz-nav-brand">DECADENT OLFACTIVE™</span>
+    <span class="qz-nav-count" id="qz-counter">1 / 8</span>
+  </div>
+  <div class="qz-prog"><div class="qz-prog-bar" id="qz-bar" style="width:12.5%"></div></div>
+  <div class="qz-wrap">
+    <div id="qz-card" class="qz-card">
+      <div class="qz-card-top">
+        <div class="qz-num" id="qz-num">STATEMENT 01 / 08</div>
+        <div class="qz-stmt" id="qz-stmt"></div>
+        <div class="qz-sub" id="qz-sub"></div>
+      </div>
+      <hr class="qz-rule"/>
+      <div class="qz-btns">
+        <button class="qz-btn qz-yes" onclick="qzAnswer(true)">AGREE</button>
+        <button class="qz-btn qz-no" onclick="qzAnswer(false)">DISAGREE</button>
+      </div>
+    </div>
+    <div class="qz-result" id="qz-result">
+      <hr class="qz-result-rule"/>
+      <div class="qz-persona-lbl">YOUR SCENT PERSONA</div>
+      <div class="qz-persona-name" id="qz-rname"></div>
+      <div class="qz-persona-desc" id="qz-rdesc"></div>
+      <div class="qz-matches-lbl">YOUR CATALOGUE MATCHES</div>
+      <div id="qz-rmatches"></div>
+      <div class="qz-cta">
+        <button class="qz-cta-main" onclick="goStock()">VIEW MY MATCHES IN CATALOGUE →</button>
+        <a class="qz-cta-wa" href="https://wa.me/919677275950?text=Hi%2C+I+just+completed+the+DO%E2%84%A2+Scent+Quiz+and+would+love+to+discuss+my+matches." target="_blank">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.559 4.122 1.535 5.856L.057 23.882l6.198-1.625A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.369l-.36-.214-3.681.965.982-3.587-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+          DISCUSS MY MATCHES WITH SHIVA
+        </a>
+        <button class="qz-cta-again" onclick="qzReset()">RETAKE QUIZ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYERING WORKSHOP MODAL -->
+<div id="layer-modal">
+  <div class="lyr-sheet">
+    <div class="lyr-hd">
+      <span class="lyr-hd-t">Layering Workshop</span>
+      <button class="lyr-x" onclick="closeLayer()">×</button>
+    </div>
+    <div class="lyr-body">
+      <p class="lyr-note">Select two fragrances from the current catalogue. We'll tell you how — and whether — they work together.</p>
+      <div class="lyr-selects">
+        <div>
+          <span class="lyr-lbl">FIRST FRAGRANCE</span>
+          <select class="lyr-sel" id="lyr-a"><option value="">— SELECT —</option></select>
+        </div>
+        <div>
+          <span class="lyr-lbl">SECOND FRAGRANCE</span>
+          <select class="lyr-sel" id="lyr-b"><option value="">— SELECT —</option></select>
+        </div>
+      </div>
+      <button class="lyr-go" onclick="doLayer()">ANALYSE COMBINATION →</button>
+      <div class="lyr-result" id="lyr-result">
+        <div class="lyr-pair" id="lyr-pair"></div>
+        <div class="lyr-score" id="lyr-score"></div>
+        <div class="lyr-verdict" id="lyr-verdict"></div>
+        <div class="lyr-seq" id="lyr-seq" style="display:none;">
+          <div class="lyr-seq-lbl">APPLICATION SEQUENCE</div>
+          <div class="lyr-seq-txt" id="lyr-seq-txt"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkout-modal">
+  <div class="co-sheet">
+    <div class="co-hd">
+      <span class="co-hd-t">Order Summary</span>
+      <button class="co-x" onclick="closeCheckout()">×</button>
+    </div>
+    <div class="co-body">
+      <div class="co-sum" id="co-sum-display"></div>
+      <div class="co-oid" id="co-oid-display" style="display:none;"></div>
+      <div class="co-next">
+        <div class="co-next-lbl">WHAT HAPPENS NEXT</div>
+        <div class="co-next-step"><span class="co-next-n">01</span><span>Tap the button below — your order details are pre-filled in WhatsApp.</span></div>
+        <div class="co-next-step"><span class="co-next-n">02</span><span>Send the message. We confirm within 2 hours.</span></div>
+        <div class="co-next-step"><span class="co-next-n">03</span><span>We send you a UPI payment request directly to your number.</span></div>
+        <div class="co-next-step"><span class="co-next-n">04</span><span>Dispatched within 48 hours of payment. Free shipping.</span></div>
+      </div>
+      <a class="co-wa" id="co-wa-link" href="#" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.559 4.122 1.535 5.856L.057 23.882l6.198-1.625A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.369l-.36-.214-3.681.965.982-3.587-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        SEND ORDER VIA WHATSAPP
+      </a>
+      <div class="co-note">No payment is taken on this site. Your UPI request comes directly from us — safe, confirmed, traceable.</div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
