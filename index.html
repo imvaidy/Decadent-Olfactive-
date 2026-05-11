@@ -1134,6 +1134,47 @@ body::before{
 
 .f-row.sold-out{opacity:0.55;}
 .f-row.sold-out .f-pr{text-decoration:line-through;color:var(--mid);}
+
+/* ── GLOBAL SOLD-OUT STATE ── */
+.f-row{opacity:0.38!important;pointer-events:auto;}
+.soldout-banner{
+  background:var(--ink);
+  border-top:3px solid var(--red);
+  border-bottom:3px solid var(--red);
+  padding:18px 18px 16px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:90;
+}
+.soldout-banner-hl{
+  font-family:var(--fB);
+  font-size:clamp(15px,4vw,20px);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:5px;
+}
+.soldout-banner-hl::before,
+.soldout-banner-hl::after{
+  content:'';
+  display:block;
+  height:1px;
+  width:28px;
+  background:var(--red);
+  flex-shrink:0;
+}
+.soldout-banner-sub{
+  font-family:var(--fC);
+  font-size:clamp(9px,2.5vw,11px);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+}
 .sold-out-btn{font-family:var(--fC);font-size:8px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--rule);padding:6px 10px;white-space:nowrap;flex-shrink:0;}
 
 @media(max-width:600px){
@@ -1682,6 +1723,12 @@ input, select, textarea {
   <div class="fbar"><button class="fb fa" data-f="all">ALL</button><button class="fb" data-f="curators-choice">CURATOR'S CHOICE</button><button class="fb" data-f="rare-find">RARE FIND</button><button class="fb" data-f="almost-gone">ALMOST GONE</button><button class="fb" data-f="grey-market">GREY MARKET</button><button class="fb" data-f="sold-out">SOLD OUT</button></div>
 <div class="sbar"><span class="sbar-lbl">SORT BY</span><button class="sb sa" data-s="default">DEFAULT</button><button class="sb" data-s="disc">MAX DISCOUNT</button><button class="sb" data-s="asc">PRICE ↑</button><button class="sb" data-s="desc">PRICE ↓</button></div>
   <div class="notice">· Tap any fragrance name to visit the official brand page</div>
+
+  <!-- ── SOLD OUT BANNER ── -->
+  <div class="soldout-banner">
+    <div class="soldout-banner-hl">⊘&nbsp; Currently Sold Out &nbsp;⊘</div>
+    <div class="soldout-banner-sub">We are restocking · Will update as soon as stock arrives</div>
+  </div>
   <div class="s-body"><div class="b-sec" data-brand="amouage">
 <div class="b-hd"><span class="b-nm">AMOUAGE</span><span class="b-cnt">20 SKUS</span></div>
 <div class="f-row" data-name="Dia 40 Woman" data-size="100ml" data-price="45500" data-profile="Floral Aldehyde">
